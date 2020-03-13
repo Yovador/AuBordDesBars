@@ -16,7 +16,7 @@
 					$NumAngl = substr($Extract['NumAngl'], 0, 6).($CountNum['COUNT(*)']+1);
 				}
 			}
-			
+
 			//Duplicate Check
 
 			$GetInfo = $DB->query('SELECT * FROM ANGLE');
@@ -52,7 +52,7 @@
 				$NumAngl = "ANGL0".($NumberOfLang+1)."01";
 			}
 			else{
-				$NumAngl = "ANG".($NumberOfLang+1)."01";	
+				$NumAngl = "ANGL".($NumberOfLang+1)."01";	
 			}
 		}
 
