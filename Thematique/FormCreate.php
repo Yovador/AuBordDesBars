@@ -5,10 +5,10 @@ include $_SERVER['DOCUMENT_ROOT']."./General/SelectList.php";?>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>BlogArt - Ajouter une Langue</title>
+	<title>BlogArt - Ajouter une Thématique</title>
 </head>
 <body>
-	<h1>Ajouter une Langue :</h1> <br>
+	<h1>Ajouter une Thématique :</h1> <br>
 
 	<form action="Create.php" method="post">
 		<p> Libellé Thematique : <input type="text" name="LibThem" /> </p>

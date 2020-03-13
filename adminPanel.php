@@ -7,7 +7,9 @@
 	<a href="./Langue/Select.php">Langue</a>
 	<a href="./Thematique/Select.php">Thematique</a>
 	<a href="./Angle/Select.php">Angle</a>
-	<a href="./MotCle/Select.php">Angle</a>
+	<a href="./MotCle/Select.php">MotCle</a>
+	<a href="./Commentaire/Select.php">Commentaire</a>
+
 
 </body>
 </html>
