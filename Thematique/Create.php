@@ -1,7 +1,8 @@
 <?php 
 
 	include "FormCreate.php";
-	include "GetNumPays.php"; 
+	include $_SERVER['DOCUMENT_ROOT']."/General/GetOneEntry.php";
+	include $_SERVER['DOCUMENT_ROOT']."./General/SelectList.php";
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -9,25 +10,23 @@
 
 		
 		if (!empty($Submit) && $Submit == 'Valider') {
-			if ($_POST['Lib1Lang'] != "" && $_POST['Lib2Lang'] != "" && $_POST['frPays'] != ""){
+			if ($_POST['LibThem'] != "" && $_POST['Lib1Lang'] != ""){
 				include $_SERVER['DOCUMENT_ROOT']."./General/connectionBD.php";
-				
 				try {
 					
-					$NumPays = GetNumPays($_POST["frPays"]);
+					$NumLang = GetOneEntry("NumLang", "LANGUE", "Lib1Lang",$_POST["Lib1Lang"]);
 
-					include "NumLangAndDuplicateCheck.php";
+					include "NumThemeAndDuplicateCheck.php";
 
 					if ($CanSend) {
 						$DB->beginTransaction();
 
-						$insert = $DB->prepare("INSERT INTO LANGUE (NumLang, Lib1Lang, Lib2Lang, NumPays) VALUES(:NumLang, :Lib1Lang, :Lib2Lang, :NumPays);");
+						$insert = $DB->prepare("INSERT INTO THEMATIQUE (NumThem, LibThem, NumLang) VALUES(:NumThem, :LibThem, :NumLang);");
 
 						$data = array(
+							':NumThem'=>$NumThem,
+							':LibThem'=>$_POST["LibThem"],
 							':NumLang'=>$NumLang,
-							':Lib1Lang'=>$_POST["Lib1Lang"],
-							':Lib2Lang'=>$_POST["Lib2Lang"],
-							':NumPays'=>$NumPays,
 
 						);
 						$insert->execute($data);

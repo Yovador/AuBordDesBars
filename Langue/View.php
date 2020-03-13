@@ -1,4 +1,4 @@
-<?php include "GetNumPays.php";?>
+<?php  include $_SERVER['DOCUMENT_ROOT']."/General/GetOneEntry.php";?>
 
 <!DOCTYPE html>
 <html>
@@ -19,7 +19,7 @@
 		<h3>Libellé Long</h3>
 		<p><?php echo $GetInfo['Lib2Lang']; ?></p>
 		<h3>Pays</h3>
-		<p><?php echo GetfrPays($GetInfo['NumPays'])?></p>
+		<p><?php echo GetOneEntry("frPays", "PAYS", "numPays",  $GetInfo['NumPays'])?></p>
 		<p><form action="FormUpdate.php" method="post"> <input  type="submit" name="id" value="Modifier" > <input  type="hidden" name="NumLang" value="<?php echo $GetInfo['NumLang'] ?>" >
 	     </form></p>
 		<p><form action="Delete.php" method="post"> <input  type="submit" name="id" value="Supprimer" > <input  type="hidden" name="NumLang" value="<?php echo $GetInfo['NumLang'] ?>"></form></p>

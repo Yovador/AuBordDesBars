@@ -1,4 +1,5 @@
-<?php $UpdateMode = false; ?>
+<?php
+include $_SERVER['DOCUMENT_ROOT']."./General/SelectList.php";?>
 
 <!DOCTYPE html>
 <html>
@@ -10,13 +11,12 @@
 	<h1>Ajouter une Langue :</h1> <br>
 
 	<form action="Create.php" method="post">
-		<p> Libellé Court : <input type="text" name="Lib1Lang" /> </p>
- 		<p> Libellé Long : <input type="text" name="Lib2Lang"/> </p>
+		<p> Libellé Thematique : <input type="text" name="LibThem" /> </p>
  		<p>
- 			Pays : 
- 			<select type="text" name="frPays"> 
- 				<option value=""> Choississez un pays... </option>
- 				<?php include $_SERVER['DOCUMENT_ROOT']."./General/SelectPays.php"; ?> 
+ 			Langue : 
+ 			<select type="text" name="Lib1Lang"> 
+ 				<option value=""> Choississez une Langue... </option>
+ 				<?php GetList("LANGUE", false ,"", "", "Lib1Lang") ?> 
  			</select>
  		</p>
 		<p><input type="submit" name="Submit" value="Valider" /></p>

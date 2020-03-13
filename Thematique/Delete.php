@@ -3,9 +3,9 @@
 
 	try {
 		$DB->beginTransaction();
-		$insert = $DB->prepare("DELETE FROM LANGUE WHERE NumLang = :NumLang  ");
+		$insert = $DB->prepare("DELETE FROM THEMATIQUE WHERE NumThem = :NumThem  ");
 		$data = array(
-			':NumLang'=>$_POST["NumLang"],
+			':NumThem'=>$_POST["NumThem"],
 
 		);
 		

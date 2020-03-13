@@ -1,7 +1,8 @@
 <?php 
 
 	include "FormCreate.php";
-	include "GetNumPays.php"; 
+	include $_SERVER['DOCUMENT_ROOT']."/General/GetOneEntry.php";
+	include $_SERVER['DOCUMENT_ROOT']."./General/SelectList.php";
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -11,10 +12,9 @@
 		if (!empty($Submit) && $Submit == 'Valider') {
 			if ($_POST['Lib1Lang'] != "" && $_POST['Lib2Lang'] != "" && $_POST['frPays'] != ""){
 				include $_SERVER['DOCUMENT_ROOT']."./General/connectionBD.php";
-				
 				try {
 					
-					$NumPays = GetNumPays($_POST["frPays"]);
+					$NumPays = GetOneEntry("numPays", "PAYS", "frPays",$_POST["frPays"]);
 
 					include "NumLangAndDuplicateCheck.php";
 

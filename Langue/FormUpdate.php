@@ -1,3 +1,5 @@
+<?php include $_SERVER['DOCUMENT_ROOT']."./General/SelectList.php";?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +8,6 @@
 <body>
 	<form action="Update.php" method="post">
 	<?php 
-		$UpdateMode = true;
 		echo "NumLang ", $_POST['NumLang'], "<br>", "<br>";
 		
 
@@ -15,11 +16,11 @@
 		try {
 			$request = $DB->query('SELECT * FROM LANGUE WHERE NumLang ="'.$_POST['NumLang'].'" ');
 			while ($InfoLang = $request->fetch()) {
-				$Selected = $InfoLang['NumPays'];
 			?>
 				<p><input type="text" name="Lib1Lang" value="<?php echo $InfoLang['Lib1Lang'] ?>" ></p>
 				<p><input type="text" name="Lib2Lang" value="<?php echo $InfoLang['Lib2Lang'] ?>" ></p>
-				<p><select type="text" name="frPays"> <?php include $_SERVER['DOCUMENT_ROOT']."./General/SelectPays.php"; ?> </select></p>
+				<p><select type="text" name="frPays"> <?php GetList("PAYS", true ,$InfoLang['NumPays'], "numPays", "frPays") ?> </select> </p>
+
 				<p><input  type="submit" name="id" value="Modifier" > <input  type="hidden" name="NumLang" value="<?php echo $InfoLang['NumLang'] ?>" > </p>
 			<?php 
 			}

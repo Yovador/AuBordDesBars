@@ -5,6 +5,6 @@
 </head>
 <body>
 	<a href="./Langue/Select.php">Langue</a>
-	<a href="./Article/Select.php">Article</a>
+	<a href="./Thematique/Select.php">Thematique</a>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<?php include "GetNumPays.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT']."/General/GetOneEntry.php"; ?>
 
 <!DOCTYPE html>
 <html>
@@ -22,12 +22,26 @@
 		include $_SERVER['DOCUMENT_ROOT']."./General/connectionBD.php";
 
 		$request = $DB->query('SELECT * FROM LANGUE');
-		while ($Langue = $request->fetch() ) {
+		while ($Langue = $request->fetch(PDO::FETCH_ASSOC) ) {
 	?>		
 			  <tr>
-			    <td> <?php echo $Langue['Lib1Lang']; ?> </td>
-			    <td> <?php echo $Langue['Lib2Lang']; ?> </td>
-			    <td> <?php echo GetfrPays($Langue['NumPays']); ?> </td>
+			  	<?php foreach ($Langue as $key => $value) {
+			  		if ($key != "NumLang") {
+			  		?>
+			  		<td> 
+			  			<div> 
+			  			<?php
+			  			if ($key == "NumPays") {
+			  				echo GetOneEntry("frPays", "PAYS", "numPays",$Langue['NumPays']);
+			  			}
+			  			else{
+							echo $Langue[$key];
+			  			}
+			  					?> 
+			  			</div> 
+			  		</td>
+			  		<?php
+			  	}} ?>
 
 			    <td> <form action="View.php" method="post"> <input  type="submit" name="id" value="Voir" > <input  type="hidden" name="NumLang" value="<?php echo $Langue['NumLang'] ?>" >
 			     </form> </td>

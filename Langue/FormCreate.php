@@ -1,4 +1,5 @@
-<?php $UpdateMode = false; ?>
+<?php
+include $_SERVER['DOCUMENT_ROOT']."./General/SelectList.php";?>
 
 <!DOCTYPE html>
 <html>
@@ -16,7 +17,7 @@
  			Pays : 
  			<select type="text" name="frPays"> 
  				<option value=""> Choississez un pays... </option>
- 				<?php include $_SERVER['DOCUMENT_ROOT']."./General/SelectPays.php"; ?> 
+ 				<?php GetList("PAYS", false ,"", "numPays", "frPays") ?> 
  			</select>
  		</p>
 		<p><input type="submit" name="Submit" value="Valider" /></p>
