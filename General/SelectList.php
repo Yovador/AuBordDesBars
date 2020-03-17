@@ -6,17 +6,19 @@
 			include "connectionBD.php";
 			$Get = $DB->query('SELECT * FROM '.$table.' ');
 
+
 			while ($List = $Get->fetch()) {
+				$cleanString = htmlspecialchars($List[$key]);
 				if ($UpdateMode) {
 					if ($Selected == $List[$PrimKey]) {
-						echo "<option value ='",$List[$key],"' selected>", $List[$key], "</option>";
+						?> <option value = "<?php echo $cleanString;?>" selected> <?php echo $List[$key];?> </option>; <?php 
 					}
 					else{
-						echo "<option value ='",$List[$key],"'>", $List[$key], "</option>";
+						?> <option value = "<?php echo $cleanString;?>"> <?php echo $List[$key];?> </option>; <?php 
 					}
 				}
 				else{
-					echo "<option value ='",$List[$key],"'>", $List[$key], "</option>";
+					?> <option value = "<?php echo $cleanString;?>"> <?php echo $List[$key];?> </option>; <?php
 				}
 				
 			}

@@ -21,7 +21,7 @@ $primKey = "NumAngl";?>
 				<p><input type="text" name="LibAngl" value="<?php echo $Info['LibAngl'] ?>" ></p>
 				<p><select type="text" name="NomLang"> <?php GetList("LANGUE", true ,$Info['NumLang'], "NumLang", "Lib1Lang") ?> </select> </p>
 
-				<p><input  type="submit" name="id" value="Modifier" > <input  type="hidden" name="<?php echo $primKey ?>" value="<?php echo $Info[$primKey] ?>" > </p>
+				<p><input  type="submit" name="id" value="Modifier" > <input  type="hidden" name="<?php echo $primKey ?>" value="<?php echo htmlspecialchars($Info[$primKey]) ?>" > </p>
 			<?php 
 			}
 		}

@@ -6,3 +6,5 @@ Ici sont listé l'ordre dans lequel j'ai fait les différents CRUD. Pour avoir l
 2-Thematique
 3-Angle
 4-MotCle
+5-Commentaire
+6-Article

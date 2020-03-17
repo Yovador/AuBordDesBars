@@ -28,7 +28,7 @@ $primKey = "NumCom";?>
 
 						else{
 						?>
-							<p><input type="text" name="<?php echo $key ?>" value="<?php echo $value ?>" ></p>
+							<p><input type="text" name="<?php echo $key ?>" value="<?php echo htmlspecialchars($value) ?>" ></p>
 						<?php
 						}						
 					}

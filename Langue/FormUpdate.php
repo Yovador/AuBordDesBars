@@ -21,7 +21,7 @@
 				<p><input type="text" name="Lib2Lang" value="<?php echo $InfoLang['Lib2Lang'] ?>" ></p>
 				<p><select type="text" name="frPays"> <?php GetList("PAYS", true ,$InfoLang['NumPays'], "numPays", "frPays") ?> </select> </p>
 
-				<p><input  type="submit" name="id" value="Modifier" > <input  type="hidden" name="NumLang" value="<?php echo $InfoLang['NumLang'] ?>" > </p>
+				<p><input  type="submit" name="id" value="Modifier" > <input  type="hidden" name="NumLang" value="<?php echo htmlspecialchars($InfoLang['NumLang']) ?>" > </p>
 			<?php 
 			}
 		}
