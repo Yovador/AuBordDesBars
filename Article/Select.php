@@ -28,7 +28,9 @@ $primKey = "NumArt";
 		    <th>Langue</th>
 		    <th>Voir</th>
 		    <th>Modifier</th>
+		    <th>Mot clé</th>
 		    <th>Supprimer</th>
+
 		 </tr>
 
 	<?php 
@@ -67,6 +69,13 @@ $primKey = "NumArt";
 			     </form> </td>
 
 			    <td> <form action="FormUpdate.php" method="post"> <input  type="submit" name="id" value="Modifier" > <input  type="hidden" name="<?php echo $primKey ?>" value="<?php echo $table[$primKey] ?>" >
+			    </form> </td>
+
+			     <td><form action="../LienArticle/MotCleLink.php" method="post"> 
+
+			     	<input type="submit" name="id" value="Mot Clé">
+			     	<input  type="hidden" name="<?php echo $primKey ?>" value="<?php echo $table[$primKey]?>">
+
 			     </form> </td>
 
 			    <td><form action="Delete.php" method="post"> <input  type="submit" name="id" value="Supprimer" > <input  type="hidden" name="<?php echo $primKey ?>" value="<?php echo $table[$primKey] ?>">  </form> </td>

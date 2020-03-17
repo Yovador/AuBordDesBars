@@ -10,9 +10,6 @@
 	<a href="./MotCle/Select.php">MotCle</a>
 	<a href="./Commentaire/Select.php">Commentaire</a>
 	<a href="./Article/Select.php">Article</a>
-
-	
-
-
+	<a href="./LienArticle/Select.php">LienArticle</a> 
 </body>
 </html>

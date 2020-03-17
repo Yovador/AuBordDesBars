@@ -11,14 +11,14 @@
 				$cleanString = htmlspecialchars($List[$key]);
 				if ($UpdateMode) {
 					if ($Selected == $List[$PrimKey]) {
-						?> <option value = "<?php echo $cleanString;?>" selected> <?php echo $List[$key];?> </option>; <?php 
+						?> <option value = "<?php echo $cleanString;?>" selected> <?php echo $cleanString;?> </option>; <?php 
 					}
 					else{
-						?> <option value = "<?php echo $cleanString;?>"> <?php echo $List[$key];?> </option>; <?php 
+						?> <option value = "<?php echo $cleanString;?>"> <?php echo $cleanString;?> </option>; <?php 
 					}
 				}
 				else{
-					?> <option value = "<?php echo $cleanString;?>"> <?php echo $List[$key];?> </option>; <?php
+					?> <option value = "<?php echo $cleanString;?>"> <?php echo $cleanString;?> </option>; <?php
 				}
 				
 			}
