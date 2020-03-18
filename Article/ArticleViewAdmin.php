@@ -90,6 +90,12 @@
 
 		<div> <form action="./FormCreate.php" method="get"> <input  type="submit" name="id" value="Lire l'article !" > <input  type="hidden" name="NumArt" value="<?php echo $Article['NumArt']; ?>"></form> </div>
 
+				<!-- Bouton Modifier -->
+		<div> <form action="./Article/FormUpdate.php" method="post"> <input  type="submit" name="id" value="Modifier" > <input  type="hidden" name="NumArt" value="<?php echo $Article['NumArt']; ?>"></form> </div>
+
+		<!-- Bouton Supprimer -->
+		<div> <form action="./Article/Delete.php" method="post"> <input  type="submit" name="id" value="Supprimer" > <input  type="hidden" name="NumArt" value="<?php echo $Article['NumArt']; ?>"></form> </div>
+
 
 
 </body>

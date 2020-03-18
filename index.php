@@ -4,7 +4,6 @@
 	<title>Au Bord Des Bars !</title>
 </head>
 <body>
-	<p><a href="./old/adminPanel.php">AncienDev</a></p>
 
 	<?php include "./General/isAdmin.php" //$IsAdmin == true si Admin?>
 
@@ -43,8 +42,6 @@
 
 					<!-- Bouton Lire -->
 					<div> <form action="./Article/ArticleViewUser.php" method="get"> <input  type="submit" name="id" value="Lire l'article !" > <input  type="hidden" name="NumArt" value="<?php echo $NewArticle['NumArt']; ?>"></form> </div>
-
-
 				</div>
 
 	<?php
@@ -66,7 +63,8 @@
 
 			while ($Article = $AllArticle->fetch()) {			
 	?>
-				<div style="margin: 1rem;">
+				<!-- Div d'un article  -->
+				<div style="margin: 1rem;"> <!-- Style a enlevé  -->
 
 					<!-- Image -->
 					<div> <img src="<?php echo $Article['UrlPhotA']; ?>"> </div>
@@ -95,7 +93,20 @@
 		if ($isAdmin) {
 	?>
 
-	<div> <form action="./Article/FormCreate.php" method="post"> <input  type="submit" name="id" value="Écrire un article" ></form> </div>
+	<div>
+
+		<form action="./Article/FormCreate.php" method="post"> <input  type="submit" name="id" value="Écrire un article" ></form>
+
+		<form action="./Langue/AllLangue.php" method="post"> <input  type="submit" name="id" value="Langue" ></form>
+
+		<form action="./Angle/AllAngle.php" method="post"> <input  type="submit" name="id" value="Angle" ></form>
+
+
+		<form action="./Thematique/AllTheme.php" method="post"> <input  type="submit" name="id" value="Theme" ></form>
+
+
+
+	</div>
 
 	<h2>Les Articles</h2>
 	<?php

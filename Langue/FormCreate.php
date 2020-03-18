@@ -1,0 +1,42 @@
+	<?php
+include $_SERVER['DOCUMENT_ROOT']."./General/SelectList.php";?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Écrire un Article - Au Bord Des Bars</title>
+</head>
+<body>
+
+	<div> <h1>Écrire un Article</h1> </div>
+
+	<form action="Create.php" method="post">
+
+
+		<div> 
+			Libellé Court : 
+			<textarea maxlength="25" type="text" name="Lib1Lang"/></textarea> 
+		</div>
+
+		<div> 
+			Libellé Long : 
+			<textarea maxlength="45" type="text" name="Lib2Lang"/></textarea>
+		</div>
+
+		<div> 
+ 			Pays : 
+ 			<select type="text" name="frPays"> 
+ 				<option value=""> Choississez un pays </option>
+ 				<?php GetList("PAYS", false ,$Info['NumPays'], "NumPays", "frPays") ?> 
+ 			</select>
+ 		</div>
+
+		<p> <input type="submit" name="Submit" value="Valider" /></p>
+	</form>
+
+	<p><form action="./AllLangue.php"><input type="submit" value="Retour"></form></p>
+	
+	<br>
+</body>
+</html>
+
