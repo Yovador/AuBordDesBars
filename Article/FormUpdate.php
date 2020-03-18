@@ -9,41 +9,89 @@ $primKey = "NumArt";?>
 <body>
 	<form action="Update.php" method="post">
 	<?php 
-		echo $primKey, $_POST[$primKey], "<br>", "<br>";
-		
 
 		include $_SERVER['DOCUMENT_ROOT']."./General/connectionBD.php";
 
 		try {
 			$request = $DB->query('SELECT * FROM ARTICLE WHERE '.$primKey.' ="'.$_POST[$primKey].'" ');
 			while ($Info = $request->fetch(PDO::FETCH_ASSOC)) {
-			?>
-				<?php foreach ($Info as $key => $value) {
-					if ($key != "NumArt" && $key != "DtCreA") {
-						if ($key == "NumAngl") {
-						?>
-							<p><select type="text" name="NomAngl"> <?php GetList("ANGLE", true ,$Info['NumAngl'], "NumAngl", "LibAngl") ?> </select> </p>
-						<?php 
-						} 
-						elseif ($key == "NumThem") {
-						?>
-							<p><select type="text" name="NomThem"> <?php GetList("THEMATIQUE", true ,$Info['NumThem'], "NumThem", "LibThem")?> </select> </p>
-						<?php 
-						}
-						elseif ($key == "NumLang") {
-						?>
-							<p><select type="text" name="NomLang"> <?php GetList("LANGUE", true ,$Info['NumLang'], "NumLang", "Lib1Lang") ?> </select> </p>
-						<?php 
-						}
+			?>		
 
-						else{
-						?>
-							<p><input style="padding: 0.2rem" size="50" type="text" name="<?php echo $key ?>" value="<?php echo htmlspecialchars($value); ?>" ></p>
-						<?php
-						}
-					}
-			} ?>
-				
+
+
+
+
+				<div> 
+					Titre : 
+					<textarea maxlength="100" type="text" name="LibTitrA"/><?php echo htmlspecialchars($Info['LibTitrA']); ?></textarea> 
+				</div>
+
+				<div> 
+					Chapo : 
+					<textarea maxlength="500" type="text" name="LibChapoA"/><?php echo htmlspecialchars($Info['LibChapoA']); ?></textarea>
+				</div>
+
+				<div> 
+					Accroche : 
+					<textarea maxlength="100" type="text" name="LibAccrochA" /><?php echo htmlspecialchars($Info['LibAccrochA']); ?></textarea>
+				</div>
+
+				<div> 
+					Paragraphe 1 :
+					<textarea maxlength="1200" type="text" name="Parag1A" value=""/><?php echo htmlspecialchars($Info['Parag1A']); ?></textarea>
+				</div>
+
+				<div> 
+					Sous-Titre 1 : 
+					<textarea maxlength="100" type="text" name="LibSsTitr1"/><?php echo htmlspecialchars($Info['LibSsTitr1']); ?></textarea>
+				</div>
+
+				<div> 
+					Paragraphe 2 : 
+					<textarea maxlength="1200" type="text" name="Parag2A"/><?php echo htmlspecialchars($Info['Parag2A'])?></textarea>
+				</div>
+
+				<div> 
+					Sous-Titre 2 : 
+					<textarea maxlength="100" type="text" name="LibSsTitr2"/><?php echo htmlspecialchars($Info['LibSsTitr2']); ?></textarea>
+				</div>
+
+				<div> 
+					Paragraphe 3 : <textarea maxlength="1200" type="text" name="Parag3A"/><?php echo htmlspecialchars($Info['Parag3A']); ?></textarea>
+				</div>
+
+				<div> 
+					Conclusion : <textarea maxlength="800" type="text" name="LibConclA"/><?php echo htmlspecialchars($Info['LibConclA']); ?></textarea>
+				</div>
+
+				<div> 
+					UrlPhoto : <input maxlength="60" type="text" name="UrlPhotA" value="<?php echo htmlspecialchars($Info['UrlPhotA']); ?>"/>
+				</div>
+
+				<div> 
+		 			Angle : 
+		 			<select type="text" name="NomAngl"> 
+		 				<option value=""> Choississez un Angle </option>
+		 				<?php GetList("ANGLE", true ,$Info['NumAngl'], "NumAngl", "LibAngl") ?> 
+		 			</select>
+		 		</div>
+
+		 		<div>
+		 			Thematique : 
+		 			<select type="text" name="NomThem"> 
+		 				<option value=""> Choississez une Thematique </option>
+		 				<?php GetList("THEMATIQUE", true ,$Info['NumThem'], "NumThem", "LibThem")?> 
+		 			</select>
+		 		</div>
+
+		 		<div>
+		 			Langue : 
+		 			<select type="text" name="NomLang"> 
+		 				<option value=""> Choississez une Langue </option>
+		 				<?php GetList("LANGUE", true ,$Info['NumLang'], "NumLang", "Lib1Lang") ?> 
+		 			</select>
+		 		</div>
+
 					
 
 				<p><input  type="submit" name="id" value="Modifier" > <input  type="hidden" name="<?php echo $primKey ?>" value="<?php echo $Info[$primKey] ?>" > </p>
@@ -56,8 +104,9 @@ $primKey = "NumArt";?>
 			$DB->rollBack();
 		}		
 	?>
-
 	</form>
-	<p><form action="Select.php"><input type="submit" value="Retour"></form></p>
+
+	
+	<p><form action="../index.php"><input type="submit" value="Retour"></form></p>
 </body>
 </html>

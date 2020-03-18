@@ -46,7 +46,7 @@
 		$DB->rollBack();
 	}
 
-	header('Location: Select.php');
+	header('Location: ../index.php');
 	exit();
 
 ?>

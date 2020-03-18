@@ -2,6 +2,17 @@
 	include $_SERVER['DOCUMENT_ROOT']."./General/connectionBD.php";
 
 	try {
+
+		$DB->beginTransaction();
+		$insert = $DB->prepare("DELETE FROM MOTCLEARTICLE WHERE NumArt = :NumArt  ");
+		$data = array(
+			':NumArt'=>$_POST["NumArt"],
+
+		);
+		
+		$insert->execute($data);
+		$DB->commit();
+
 		$DB->beginTransaction();
 		$insert = $DB->prepare("DELETE FROM ARTICLE WHERE NumArt = :NumArt  ");
 		$data = array(
@@ -20,7 +31,7 @@
 		$DB->rollBack();
 	}
 
-	header('Location: Select.php');
+	header('Location: ../index.php');
 	exit();
 	
 
