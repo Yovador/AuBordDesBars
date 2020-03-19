@@ -14,7 +14,7 @@ include "../General/SelectList.php";?>
 
 	<div> <h1>Écrire un Article</h1> </div>
 
-	<form action="Create.php" method="post">
+	<form action="Create.php" method="post" enctype="multipart/form-data" >
 
 		<div> 
 			Titre : 
@@ -46,8 +46,9 @@ include "../General/SelectList.php";?>
 		<div> 
 			Conclusion : <textarea maxlength="800" type="text" name="LibConclA" /></textarea>
 		</div>
+
 		<div> 
-			UrlPhoto : <input maxlength="60" type="text" name="UrlPhotA" />
+			UrlPhoto : <input type="file" name="File" />
 		</div>
 
 		<div> 

@@ -1,6 +1,5 @@
 <?php include "../General/SelectList.php";
 include "../General/GetOneEntry.php";
-
 $primKey = "NumArt";?>
 
 <!DOCTYPE html>
@@ -14,7 +13,7 @@ $primKey = "NumArt";?>
 	<div> <form action="../index.php" method="post"> <input  type="submit" name="id" value="HOME" > <input  type="hidden" name="isAdmin" value="<?php echo "true"; ?>"></form> </div>
 
 
-	<form action="Update.php" method="post">
+	<form action="Update.php" method="post" enctype="multipart/form-data" >
 	<?php 
 
 		include "../General/connectionBD.php";
@@ -67,7 +66,7 @@ $primKey = "NumArt";?>
 				</div>
 
 				<div> 
-					UrlPhoto : <input maxlength="60" type="text" name="UrlPhotA" value="<?php echo htmlspecialchars($Info['UrlPhotA']); ?>"/>
+					UrlPhoto : <input type="file" name="File"/>
 				</div>
 
 				<div>	

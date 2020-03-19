@@ -13,6 +13,12 @@
 		$insert->execute($data);
 		$DB->commit();
 
+		$CheckPhoto = $DB->query('SELECT * FROM ARTICLE WHERE  NumArt = "'.$_POST["NumArt"].'"');
+		while ($Photo = $CheckPhoto->fetch()) {
+			unlink($Photo['UrlPhotA']);
+		}
+
+
 		$DB->beginTransaction();
 		$insert = $DB->prepare("DELETE FROM ARTICLE WHERE NumArt = :NumArt  ");
 		$data = array(

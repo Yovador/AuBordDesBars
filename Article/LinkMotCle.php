@@ -1,6 +1,10 @@
 <?php
 	include "../General/connectionBD.php";
 
+	if (!isset($NumArt)) {
+		$NumArt = $_POST['NumArt'];
+	}
+
 	$MoCleList = $_POST['MoCleList'].";";
 	$Mot = "";
 	$ArrayMotCle[] = array();
@@ -18,11 +22,14 @@
 
 	foreach ($ArrayMotCle as $key => $value) {
 		if ($key != 0) {
-			
+			echo "<br>", "<br>", $value,"<br>";
 			$ifExist = $DB->query('SELECT COUNT(*) FROM MOTCLE WHERE LibMoCle ="'.$value.'" ');
 			while ($Count = $ifExist->fetch()) {
-				
+				echo $Count['COUNT(*)'], "<br>";
 				if ($Count['COUNT(*)'] > 0) {
+
+
+
 
 					try {
 
@@ -30,11 +37,16 @@
 
 					
 						$NumMoCle = GetOneEntry("NumMoCle","MOTCLE", "LibMoCle", $value);
+						echo $NumMoCle, "    ", $NumArt, "<br>";
+						echo gettype($NumMoCle),"   ",gettype($NumArt), "<br>";
 						$insert = $DB->prepare("INSERT INTO MOTCLEARTICLE(NumArt, NumMoCle) VALUES(:NumArt, :NumMoCle);");
 
-						$Exist = $DB->query("SELECT COUNT(*) FROM MOTCLEARTICLE WHERE NumArt = '".$NumArt."' AND NumMoCle = '$NumMoCle'");
+						$Exist = $DB->query("SELECT COUNT(*) FROM MOTCLEARTICLE WHERE NumArt = '".$NumArt."' AND NumMoCle = '".$NumMoCle."'");
 
 						while ($CountMot = $Exist->fetch()) {
+
+							echo $CountMot['COUNT(*)'], "<br>";
+
 							if ($CountMot['COUNT(*)']>0) {
 								$CanSend = false;
 							}
@@ -48,7 +60,7 @@
 
 						if ($CanSend) {
 							$data = array(
-								':NumArt'=>$NumArt , 
+								':NumArt'=> $NumArt, 
 								':NumMoCle'=> $NumMoCle,
 							);
 
@@ -66,14 +78,10 @@
 					}
 
 				}
-
-
 				else{
 
 
 					try {
-					
-					$NumLang = "FRAN01";
 
 					// Generation de la clé
 

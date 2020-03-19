@@ -31,6 +31,29 @@
 					date_default_timezone_set('Europe/Paris');
 					$DtCreA = date('Y-m-j');
 
+					if ($_FILES['File']['name']!=""){
+						$targetDir = "../assets/image";
+						$imageArt = $_FILES['File']['name'];
+						$path = pathinfo($imageArt);
+						$filename = $NumArt.str_replace(" ", "", substr($_POST["LibTitrA"], 0, 5));
+						$ext = $path['extension'];
+						$temp_name = $_FILES['File']['tmp_name'];
+						$path_filename_ext = $targetDir.$filename.".".$ext;
+				
+						if (file_exists($path_filename_ext)) {
+							echo "Sorry, file already exists.";
+						}
+						else{
+							move_uploaded_file($temp_name,$path_filename_ext);
+							$UrlPhotA = $path_filename_ext;
+							echo "Congratulations! File Uploaded Successfully.";
+						}
+						}
+						
+						if (!isset($UrlPhotA) ){
+							$UrlPhotA = "";
+						}
+
 					
 					$row = "NumArt, DtCreA, LibTitrA, LibChapoA, LibAccrochA, Parag1A, LibSsTitr1, Parag2A, LibSsTitr2, Parag3A, LibConclA, UrlPhotA, Likes, NumAngl, NumThem, NumLang";
 					$var = " :NumArt, :DtCreA, :LibTitrA, :LibChapoA, :LibAccrochA, :Parag1A, :LibSsTitr1, :Parag2A, :LibSsTitr2, :Parag3A, :LibConclA, :UrlPhotA, :Likes, :NumAngl, :NumThem, :NumLang";
@@ -53,7 +76,7 @@
 							':LibSsTitr2'=> $_POST["LibSsTitr2"],
 							':Parag3A'=> $_POST["Parag3A"],
 							':LibConclA'=> $_POST["LibConclA"],
-							':UrlPhotA'=> $_POST["UrlPhotA"],
+							':UrlPhotA'=> $UrlPhotA,
 							':Likes'=> $Likes,
 							':NumAngl'=> $NumAngl,
 							':NumThem'=> $NumThem,
@@ -78,8 +101,10 @@
 					$DB->rollBack();
 				}
 
-
-				include "LinkMotCle.php";
+				if ($_POST['MoCleList'] != "") {
+					include "LinkMotCle.php";
+				}
+				
 
 			}
 
