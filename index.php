@@ -6,7 +6,7 @@
 
 </head>
 <body>
-
+	
 	<?php include "./General/isAdmin.php" //$IsAdmin == true si Admin?>
 
 
@@ -20,7 +20,7 @@
 <!--///////////////////////////// USER /////////////////////////////////// -->
 
 	<!-- Bouton Home -->
-	<div> <form action="./index.php" method="post"> <input  type="submit" name="id" value="HOME" > <input  type="hidden" name="isAdmin" value="<?php echo $isAdmin; ?>"></form> </div>
+	<div> <form action="./index.php" method="post"> <input  type="submit" name="id" value="Au Bord Des Bars" > <input  type="hidden" name="isAdmin" value="<?php echo $isAdmin; ?>"></form> </div>
 	
 
 	<?php
