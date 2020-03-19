@@ -82,7 +82,7 @@ $primKey = "NumArt";?>
 					?>
 
 
-					Mot-Clé : <input maxlength="60" type="text" name="MoCleList" value="<?php
+					Mot-Clé : (Chaque mot doit être séparé d'un ; ) <input maxlength="60" type="text" name="MoCleList" value="<?php
 							foreach ($ListMotCle as $key => $value) {
 								if($key != 0){
 									if ($value == end($ListMotCle)) {
