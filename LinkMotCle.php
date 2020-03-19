@@ -32,7 +32,7 @@
 						$NumMoCle = GetOneEntry("NumMoCle","MOTCLE", "LibMoCle", $value);
 						$insert = $DB->prepare("INSERT INTO MOTCLEARTICLE(NumArt, NumMoCle) VALUES(:NumArt, :NumMoCle);");
 
-						$Exist = $DB->query("SELECT COUNT(*) FROM MOTCLEARTICLE WHERE NumArt = '".$NumArt."' AND NumMoCle = '$NumMoCle'");
+						$Exist = $DB->query("SELECT COUNT(*) FROM MOTCLEARTICLE WHERE NumArt = '".$_POST['NumArt']."' AND NumMoCle = '$NumMoCle'");
 
 						while ($CountMot = $Exist->fetch()) {
 							if ($CountMot['COUNT(*)']>0) {
@@ -48,7 +48,7 @@
 
 						if ($CanSend) {
 							$data = array(
-								':NumArt'=>$NumArt , 
+								':NumArt'=>$_POST['NumArt'] , 
 								':NumMoCle'=> $NumMoCle,
 							);
 
@@ -153,7 +153,7 @@
 
 						$insert = $DB->prepare("INSERT INTO MOTCLEARTICLE(NumArt, NumMoCle) VALUES(:NumArt, :NumMoCle);");
 
-						$Exist = $DB->query("SELECT COUNT(*) FROM MOTCLEARTICLE WHERE NumArt = '".$NumArt."' AND NumMoCle = '$NumMoCle'");
+						$Exist = $DB->query("SELECT COUNT(*) FROM MOTCLEARTICLE WHERE NumArt = '".$_POST['NumArt']."' AND NumMoCle = '$NumMoCle'");
 
 						while ($CountMot = $Exist->fetch()) {
 							if ($CountMot['COUNT(*)']>0) {
@@ -169,7 +169,7 @@
 
 						if ($CanSend) {
 							$data = array(
-								':NumArt'=>$NumArt, 
+								':NumArt'=>$_POST['NumArt'] , 
 								':NumMoCle'=> $NumMoCle,
 							);
 

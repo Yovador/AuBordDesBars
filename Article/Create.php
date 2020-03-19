@@ -79,15 +79,9 @@
 				}
 
 
-				//include "LinkMotCle.php";
-
-
+				include "LinkMotCle.php";
 
 			}
-
-
-
-
 
 			else {
 				echo "<div style='color : red;'> Tout les champs ne sont pas rempli ! </div>";
