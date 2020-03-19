@@ -1,4 +1,6 @@
 <?php include "../General/SelectList.php";
+include "../General/GetOneEntry.php";
+
 $primKey = "NumArt";?>
 
 <!DOCTYPE html>
@@ -66,6 +68,35 @@ $primKey = "NumArt";?>
 
 				<div> 
 					UrlPhoto : <input maxlength="60" type="text" name="UrlPhotA" value="<?php echo htmlspecialchars($Info['UrlPhotA']); ?>"/>
+				</div>
+
+				<div>	
+					<?php 
+
+					$SelectMotCle = $DB->query('SELECT * FROM MOTCLEARTICLE WHERE NumArt = "'.$_POST['NumArt'].'"');
+
+					$ListMotCle[] = array();
+
+					while ($MotCle = $SelectMotCle->fetch()) {
+						array_push($ListMotCle, GetOneEntry("LibMoCle", "MOTCLE", "NumMoCle", $MotCle['NumMoCle']) );
+					}
+					?>
+
+
+					Mot-Clé : <input maxlength="60" type="text" name="MoCleList" value="<?php
+							foreach ($ListMotCle as $key => $value) {
+								if($key != 0){
+									if ($value == end($ListMotCle)) {
+										echo $value;
+									}
+									else{
+										echo $value.";";
+									}
+									
+								}
+							}
+					?>" />
+
 				</div>
 
 				<div> 
