@@ -1,3 +1,5 @@
+<div> <form action="../index.php" method="post"> <input  type="submit" name="id" value="HOME" > <input  type="hidden" name="isAdmin" value="<?php echo "true"; ?>"></form> </div>
+
 <h2>Les Thematiques</h2>
 
 <form action="./FormCreate.php" method="post"> <input  type="submit" name="id" value="Créer une langue" ></form>

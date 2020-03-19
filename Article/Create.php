@@ -77,7 +77,18 @@
 					echo $e;
 					$DB->rollBack();
 				}
+
+
+				//include "LinkMotCle.php";
+
+
+
 			}
+
+
+
+
+
 			else {
 				echo "<div style='color : red;'> Tout les champs ne sont pas rempli ! </div>";
 			}

@@ -19,11 +19,7 @@
 
 	<!-- Bouton Home -->
 	<div> <form action="./index.php" method="post"> <input  type="submit" name="id" value="HOME" > <input  type="hidden" name="isAdmin" value="<?php echo $isAdmin; ?>"></form> </div>
-
-	WIP : 
-	<div> <form action="./test.php" method="post"> <input  type="text" name="MoCleList" value=""> <input  type="submit" name="id" value="TEST" > </form> </div>
-
-		
+	
 
 	<?php
 		if (!$isAdmin) {
@@ -104,8 +100,8 @@
 
 	<div style="margin: 1rem; ">
 		Écrire un article ou voir la liste complète pour les modifier
-		<form action="./Article/AllArticle.php" method="post"> <input  type="submit" name="id" value="Voir La listes des Articles" ></form>
 		<form action="./Article/FormCreate.php" method="post"> <input  type="submit" name="id" value="Écrire un article" ></form>
+		<form action="./Article/AllArticle.php" method="post"> <input  type="submit" name="id" value="Voir La listes des Articles" ></form>
 
 	</div>
 
