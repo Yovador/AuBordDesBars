@@ -29,7 +29,10 @@
 					
 					$NumLang = "FRAN01";
 
+					// Generation de la clé
+
 					$IsNum = $DB->query('SELECT COUNT(*) FROM MOTCLE WHERE NumLang = "'.$NumLang.'"');
+
 						while ($CountNum = $IsNum->fetch()) {
 
 							if ($CountNum['COUNT(*)'] > 0) { 
@@ -71,10 +74,10 @@
 
 							}
 
-
-
-
 						}
+
+						// Création du mot clé
+
 
 						$DB->beginTransaction();
 
@@ -90,19 +93,26 @@
 						$DB->commit();
 
 				
-				} 
+					} 
+					catch (PDOException $e) {
+						echo $e;
+						$DB->rollBack();	
+					}
 
-				catch (PDOException $e) {
-					echo $e;
-					$DB->rollBack();
-				}
+
+
+					try {
+						
+					} catch (PDOException $e) {
+						echo $e;
+						$DB->rollBack();
+					}
+
+
+
 				}
 			}
-
-
-
-		}
-		
+		}	
 	}
 
 ?>
