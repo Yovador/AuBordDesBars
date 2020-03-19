@@ -1,6 +1,6 @@
 <?php 
-	include $_SERVER['DOCUMENT_ROOT']."./General/connectionBD.php";
-	include $_SERVER['DOCUMENT_ROOT']."./General/GetOneEntry.php";
+	include "../General/connectionBD.php";
+	include "../General/GetOneEntry.php";
 
 
 	$SelectArticle = $DB->query("SELECT * FROM ARTICLE WHERE NumArt = '".$_GET['NumArt']."'");
@@ -21,7 +21,7 @@
 
 
 	<!-- Bouton Home -->
-	<div> <a href="../index.php"> Home </a> </div>
+	<div> <form action="../index.php" method="post"> <input  type="submit" name="id" value="HOME" > <input  type="hidden" name="isAdmin" value="<?php echo "true"; ?>"></form> </div>
 
 	<!-- Titre -->
 	<div> <h2> <?php echo $Article['LibTitrA'];?> </h2> </div> 
@@ -88,13 +88,14 @@
 
 		</div>
 
-		<div> <form action="./FormCreate.php" method="get"> <input  type="submit" name="id" value="Lire l'article !" > <input  type="hidden" name="NumArt" value="<?php echo $Article['NumArt']; ?>"></form> </div>
-
 				<!-- Bouton Modifier -->
-		<div> <form action="./Article/FormUpdate.php" method="post"> <input  type="submit" name="id" value="Modifier" > <input  type="hidden" name="NumArt" value="<?php echo $Article['NumArt']; ?>"></form> </div>
+		<div> <form action="./FormUpdate.php" method="post"> <input  type="submit" name="id" value="Modifier" > <input  type="hidden" name="NumArt" value="<?php echo $Article['NumArt']; ?>"></form> </div>
 
 		<!-- Bouton Supprimer -->
-		<div> <form action="./Article/Delete.php" method="post"> <input  type="submit" name="id" value="Supprimer" > <input  type="hidden" name="NumArt" value="<?php echo $Article['NumArt']; ?>"></form> </div>
+		<div> <form action="./Delete.php" method="post"> <input  type="submit" name="id" value="Supprimer" > <input  type="hidden" name="NumArt" value="<?php echo $Article['NumArt']; ?>"></form> </div>
+
+		<form action="./AllArticle.php" method="post"> <input  type="submit" name="id" value="Retour à la liste des Articles" ></form> 
+
 
 
 

@@ -3,8 +3,8 @@
 <form action="./FormCreate.php" method="post"> <input  type="submit" name="id" value="Créer une langue" ></form>
 
 	<?php
-			include $_SERVER['DOCUMENT_ROOT']."/General/GetOneEntry.php"; 
-			include $_SERVER['DOCUMENT_ROOT']."./General/connectionBD.php";
+			include "../General/GetOneEntry.php"; 
+			include "../General/connectionBD.php";
 
 
 

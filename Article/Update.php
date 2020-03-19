@@ -1,7 +1,7 @@
 <?php 
 
-	include $_SERVER['DOCUMENT_ROOT']."./General/connectionBD.php";
-	include $_SERVER['DOCUMENT_ROOT']."/General/GetOneEntry.php"; 
+	include "../General/connectionBD.php";
+	include "../General/GetOneEntry.php"; 
 
 	$Set = "LibTitrA = :LibTitrA, LibChapoA = :LibChapoA, LibAccrochA = :LibAccrochA, Parag1A = :Parag1A, LibSsTitr1 = :LibSsTitr1, Parag2A = :Parag2A, LibSsTitr2 = :LibSsTitr2, Parag3A = :Parag3A, LibConclA = :LibConclA, UrlPhotA = :UrlPhotA, Likes = :Likes, NumAngl = :NumAngl, NumThem = :NumThem, NumLang = :NumLang" ; 
 
@@ -46,7 +46,7 @@
 		$DB->rollBack();
 	}
 
-	header('Location: ../index.php');
+	header('Location: ./AllArticle.php');
 	exit();
 
 ?>

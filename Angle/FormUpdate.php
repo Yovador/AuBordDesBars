@@ -1,4 +1,4 @@
-<?php include $_SERVER['DOCUMENT_ROOT']."./General/SelectList.php";
+<?php include "../General/SelectList.php";
 $primKey = "NumAngl";?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ $primKey = "NumAngl";?>
 	<form action="Update.php" method="post">
 	<?php 
 
-		include $_SERVER['DOCUMENT_ROOT']."./General/connectionBD.php";
+		include "../General/connectionBD.php";
 
 		try {
 			$request = $DB->query('SELECT * FROM ANGLE WHERE '.$primKey.' ="'.$_POST[$primKey].'" ');

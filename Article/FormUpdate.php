@@ -1,4 +1,4 @@
-<?php include $_SERVER['DOCUMENT_ROOT']."./General/SelectList.php";
+<?php include "../General/SelectList.php";
 $primKey = "NumArt";?>
 
 <!DOCTYPE html>
@@ -7,20 +7,20 @@ $primKey = "NumArt";?>
 	<title></title>
 </head>
 <body>
+
+	<!-- Bouton Home -->
+	<div> <form action="../index.php" method="post"> <input  type="submit" name="id" value="HOME" > <input  type="hidden" name="isAdmin" value="<?php echo "true"; ?>"></form> </div>
+
+
 	<form action="Update.php" method="post">
 	<?php 
 
-		include $_SERVER['DOCUMENT_ROOT']."./General/connectionBD.php";
+		include "../General/connectionBD.php";
 
 		try {
 			$request = $DB->query('SELECT * FROM ARTICLE WHERE '.$primKey.' ="'.$_POST[$primKey].'" ');
 			while ($Info = $request->fetch(PDO::FETCH_ASSOC)) {
 			?>		
-
-
-
-
-
 				<div> 
 					Titre : 
 					<textarea maxlength="100" type="text" name="LibTitrA"/><?php echo htmlspecialchars($Info['LibTitrA']); ?></textarea> 
@@ -107,6 +107,7 @@ $primKey = "NumArt";?>
 	</form>
 
 	
-	<p><form action="../index.php"><input type="submit" value="Retour"></form></p>
+	<form action="./AllArticle.php" method="post"> <input  type="submit" name="id" value="Retour à la liste des Articles" ></form> 
+
 </body>
 </html>

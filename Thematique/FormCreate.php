@@ -1,5 +1,5 @@
 	<?php
-include $_SERVER['DOCUMENT_ROOT']."./General/SelectList.php";?>
+include "../General/SelectList.php";?>
 
 <!DOCTYPE html>
 <html>

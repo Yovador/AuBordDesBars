@@ -1,6 +1,6 @@
 <?php 
-	include $_SERVER['DOCUMENT_ROOT']."./General/connectionBD.php";
-	include $_SERVER['DOCUMENT_ROOT']."./General/GetOneEntry.php";
+	include "../General/connectionBD.php";
+	include "../General/GetOneEntry.php";
 
 
 	$SelectArticle = $DB->query("SELECT * FROM ARTICLE WHERE NumArt = '".$_GET['NumArt']."'");
@@ -19,9 +19,8 @@
 </head>
 <body>
 
-
 	<!-- Bouton Home -->
-	<div> <a href="../index.php"> Home </a> </div>
+	<div> <form action="../index.php" method="post"> <input  type="submit" name="id" value="HOME" > <input  type="hidden" name="isAdmin" value="<?php echo "false"; ?>"></form> </div>
 
 	<!-- Titre -->
 	<div> <h2> <?php echo $Article['LibTitrA'];?> </h2> </div> 

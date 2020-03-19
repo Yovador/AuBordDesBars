@@ -1,5 +1,5 @@
 	<?php
-include $_SERVER['DOCUMENT_ROOT']."./General/SelectList.php";?>
+include "../General/SelectList.php";?>
 
 <!DOCTYPE html>
 <html>
@@ -7,6 +7,10 @@ include $_SERVER['DOCUMENT_ROOT']."./General/SelectList.php";?>
 	<title>Écrire un Article - Au Bord Des Bars</title>
 </head>
 <body>
+
+	<!-- Bouton Home -->
+	<div> <form action="../index.php" method="post"> <input  type="submit" name="id" value="HOME" > <input  type="hidden" name="isAdmin" value="<?php echo "true"; ?>"></form> </div>
+
 
 	<div> <h1>Écrire un Article</h1> </div>
 
@@ -47,6 +51,11 @@ include $_SERVER['DOCUMENT_ROOT']."./General/SelectList.php";?>
 		</div>
 
 		<div> 
+			Mot-Clé : <input maxlength="60" type="text" name="MoCleList" />
+		</div>
+
+
+		<div> 
  			Angle : 
  			<select type="text" name="NomAngl"> 
  				<option value=""> Choississez un Angle </option>
@@ -70,10 +79,12 @@ include $_SERVER['DOCUMENT_ROOT']."./General/SelectList.php";?>
  			</select>
  		</div>
 
+
+
 		<p> <input type="submit" name="Submit" value="Valider" /></p>
 	</form>
 
-	<p><form action="../index.php"><input type="submit" value="Retour"></form></p>
+	<form action="./AllArticle.php" method="post"> <input  type="submit" name="id" value="Retour à la liste des Articles" ></form> 
 	
 	<br>
 </body>

@@ -1,7 +1,7 @@
 <?php
 
-	include $_SERVER['DOCUMENT_ROOT']."/General/GetOneEntry.php";
-	include $_SERVER['DOCUMENT_ROOT']."./General/SelectList.php";
+	include "../General/GetOneEntry.php";
+	include "../General/SelectList.php";
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -10,7 +10,7 @@
 		
 		if (!empty($Submit) && $Submit == 'Valider') {
 			if ($_POST['LibTitrA'] != "" && $_POST['NomLang'] != "" && $_POST['NomAngl'] != "" && $_POST['NomThem'] != "" && $_POST['Parag1A'] != "" ){
-				include $_SERVER['DOCUMENT_ROOT']."./General/connectionBD.php";
+				include "../General/connectionBD.php";
 				try {
 
 					echo $_POST['NomThem'], "<br>";
@@ -66,6 +66,10 @@
 					else{
 						echo "DUPLICATE";
 					}
+
+
+
+
 				
 				} 
 
@@ -81,7 +85,7 @@
 
 	}
 
-	header('Location: ../index.php');
+	header('Location: ./AllArticle.php');
 	exit();
 
 ?>

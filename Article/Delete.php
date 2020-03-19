@@ -1,5 +1,5 @@
 <?php
-	include $_SERVER['DOCUMENT_ROOT']."./General/connectionBD.php";
+	include "../General/connectionBD.php";
 
 	try {
 
@@ -31,7 +31,7 @@
 		$DB->rollBack();
 	}
 
-	header('Location: ../index.php');
+	header('Location: ./AllArticle.php');
 	exit();
 	
 

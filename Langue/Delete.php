@@ -1,5 +1,5 @@
 <?php
-	include $_SERVER['DOCUMENT_ROOT']."./General/connectionBD.php";
+	include "../General/connectionBD.php";
 
 	try {
 		$DB->beginTransaction();

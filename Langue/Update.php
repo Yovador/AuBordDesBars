@@ -1,7 +1,7 @@
 <?php 
 
-	include $_SERVER['DOCUMENT_ROOT']."./General/connectionBD.php";
-	include $_SERVER['DOCUMENT_ROOT']."/General/GetOneEntry.php"; 
+	include "../General/connectionBD.php";
+	include "../General/GetOneEntry.php"; 
 
 	try {
 

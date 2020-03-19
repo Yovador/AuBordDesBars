@@ -2,8 +2,8 @@
 
 	
 
-	$IsNumLang = $DB->query('SELECT COUNT(*) FROM THEMATIQUE WHERE NumLang = "'.$NumLang.'"');
-	while ($CountNum = $IsNumLang->fetch()) {
+	$IsNum = $DB->query('SELECT COUNT(*) FROM THEMATIQUE WHERE NumLang = "'.$NumLang.'"');
+	while ($CountNum = $IsNum->fetch()) {
 
 		if ($CountNum['COUNT(*)'] > 0) { 
 			//Create NumThem si il y a déja au moins un theme qui a la même langue que lui
