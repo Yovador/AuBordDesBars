@@ -1,0 +1,42 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+#bouttonAdmin{
+    order: 2;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    border: none;
+    padding-top: 90px;
+}
+#bouttonVisiteur{
+    order: 1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14pt;
+    color: #413C69;
+    background-color: #ffffff;
+    border: none;
+    padding-top: 90px;
+}
+#titre{
+    order: 3;
+    font-size: 14pt;
+    color: #413C69;
+    padding-top: 50px;
+    margin-left: 25em ;
+    margin-right: 25em ;
+}
+#boutonBars{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 50pt;
+    color: #413C69;
+    background-color: #ffffff;
+    border: none;
+    
+}
+.indicateur{
+    order: 4;
+}
