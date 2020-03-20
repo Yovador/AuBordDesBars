@@ -124,6 +124,16 @@
 			Thèmes : <form action="./Thematique/FormCreate.php" method="post"> <input  type="submit" name="id" value="Ajouter un Thème" ></form>
 					<form action="./Thematique/AllTheme.php" method="post"> <input  type="submit" name="id" value="Voir la liste des Thèmes" ></form>
 		</div>
+
+		<div style="margin: 1rem; ">
+			Commentaires : <form action="./Commentaire/FormCreate.php" method="post"> <input  type="submit" name="id" value="Ajouter un Commentaire" ></form>
+					<form action="./Commentaire/AllComment.php" method="post"> <input  type="submit" name="id" value="Voir la liste des Commentaires" ></form>
+		</div>
+
+		<div style="margin: 1rem; ">
+			Mots-Clés : <form action="./MotCle/FormCreate.php" method="post"> <input  type="submit" name="id" value="Ajouter un Mot-Clé" ></form>
+					<form action="./MotCle/AllMot.php" method="post"> <input  type="submit" name="id" value="Voir la liste des Mots-Clés" ></form>
+		</div>
 	
 	</div>
 

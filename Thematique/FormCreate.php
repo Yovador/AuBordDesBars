@@ -13,7 +13,7 @@ include "../General/SelectList.php";?>
 	<form action="Create.php" method="post">
 		<div> 
 			Nom du Theme : 
-			<textarea maxlength="60" type="text" name="LibThem"/></textarea> 
+			<input maxlength="60" type="text" name="LibThem"/> 
 		</div>
 
 		<div> 

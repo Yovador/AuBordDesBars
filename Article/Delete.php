@@ -4,6 +4,18 @@
 	try {
 
 		$DB->beginTransaction();
+		$insert = $DB->prepare("DELETE FROM COMMENT WHERE NumArt = :NumArt  ");
+		$data = array(
+			':NumArt'=>$_POST["NumArt"],
+
+		);
+		
+		$insert->execute($data);
+		$DB->commit();
+
+
+
+		$DB->beginTransaction();
 		$insert = $DB->prepare("DELETE FROM MOTCLEARTICLE WHERE NumArt = :NumArt  ");
 		$data = array(
 			':NumArt'=>$_POST["NumArt"],

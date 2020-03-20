@@ -52,7 +52,15 @@ include "../General/SelectList.php";?>
 		</div>
 
 		<div> 
-			Mot-Clé : <input maxlength="60" type="text" name="MoCleList" />
+			<?php 
+				include "../General/connectionBD.php";
+				$GetMot = $DB->query('SELECT * FROM MOTCLE');
+				while ($Mot = $GetMot->fetch()) {
+			?>
+					<input style="margin:1rem;" type="checkbox" name="<?php echo$Mot['NumMoCle']; ?>" id="<?php echo$Mot['NumMoCle']; ?>" value="<?php echo$Mot['NumMoCle']; ?>"><label for="<?php echo$Mot['NumMoCle']; ?>">"<?php echo$Mot['LibMoCle']; ?>"</label>
+			<?php
+				}
+			?>  
 		</div>
 
 

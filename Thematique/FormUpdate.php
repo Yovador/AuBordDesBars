@@ -19,7 +19,7 @@ $primKey = "NumThem";?>
 
 				<div> 
 					Nom du Theme : 
-					<textarea maxlength="60" type="text" name="LibThem"/><?php echo htmlspecialchars($Info['LibThem']); ?></textarea> 
+					<input maxlength="60" type="text" name="LibThem" value="<?php echo htmlspecialchars($Info['LibThem']); ?>" />
 				</div>
 
 				<div> 

@@ -15,12 +15,12 @@ include "../General/SelectList.php";?>
 
 		<div> 
 			Libellé Court : 
-			<textarea maxlength="25" type="text" name="Lib1Lang"/></textarea> 
+			<input maxlength="25" type="text" name="Lib1Lang"/>
 		</div>
 
 		<div> 
 			Libellé Long : 
-			<textarea maxlength="45" type="text" name="Lib2Lang"/></textarea>
+			<input maxlength="45" type="text" name="Lib2Lang"/>
 		</div>
 
 		<div> 

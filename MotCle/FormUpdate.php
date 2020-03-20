@@ -1,10 +1,10 @@
 <?php include "../General/SelectList.php";
-$primKey = "NumAngl";?>
+$primKey = "NumMoCle";?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Modifier un Angle - Au Bord Des Bars</title>
+	<title>Modifier un MotCle - Au Bord Des Bars</title>
 </head>
 <body>
 	<form action="Update.php" method="post">
@@ -13,13 +13,13 @@ $primKey = "NumAngl";?>
 		include "../General/connectionBD.php";
 
 		try {
-			$request = $DB->query('SELECT * FROM ANGLE WHERE '.$primKey.' ="'.$_POST[$primKey].'" ');
+			$request = $DB->query('SELECT * FROM MOTCLE WHERE '.$primKey.' ="'.$_POST[$primKey].'" ');
 			while ($Info = $request->fetch(PDO::FETCH_ASSOC)) {
 			?>		
 
 				<div> 
-					Nom de l'angle : 
-					<input maxlength="60" type="text" name="LibAngl" value="<?php echo htmlspecialchars($Info['LibAngl']); ?>" />
+					Nom du Mot Clé : 
+					<input maxlength="60" type="text" name="LibMoCle" value="<?php echo htmlspecialchars($Info['LibMoCle']); ?>"/> 
 				</div>
 
 				<div> 
@@ -47,7 +47,7 @@ $primKey = "NumAngl";?>
 	</form>
 
 	
-	<p><form action="./AllAngle.php"><input type="submit" value="Retour"></form></p>
+	<p><form action="./AllMot.php"><input type="submit" value="Retour"></form></p>
 
 </body>
 </html>

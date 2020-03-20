@@ -62,21 +62,29 @@
 	}
 
 
-	if ($_POST['MoCleList'] != "") {
 
-		$DB->beginTransaction();
-		$insert = $DB->prepare("DELETE FROM MOTCLEARTICLE WHERE NumArt = :NumArt  ");
-		$data = array(
-			':NumArt'=>$_POST["NumArt"],
+	$DB->beginTransaction();
+	$insert = $DB->prepare("DELETE FROM MOTCLEARTICLE WHERE NumArt = :NumArt  ");
+	$data = array(
+		':NumArt'=>$_POST["NumArt"],
 
-		);
-		
-		$insert->execute($data);
-		$DB->commit();
+	);
+	
+	$insert->execute($data);
+	$DB->commit();
 
 
+	$NumArt = $_POST["NumArt"];
+
+	$GetMot = $DB->query('SELECT * FROM MOTCLE');
+
+	while ($Mot = $GetMot->fetch()) {
+		if (isset($_POST[$Mot['NumMoCle']])) {
+			$NumMoCle = $Mot['NumMoCle'];
 			include "LinkMotCle.php";
 		}
+	}
+
 
 		echo "Updated !";
 

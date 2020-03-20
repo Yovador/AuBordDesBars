@@ -69,33 +69,26 @@ $primKey = "NumArt";?>
 					UrlPhoto : <input type="file" name="File"/>
 				</div>
 
-				<div>	
+				<div> 
 					<?php 
-
-					$SelectMotCle = $DB->query('SELECT * FROM MOTCLEARTICLE WHERE NumArt = "'.$_POST['NumArt'].'"');
-
-					$ListMotCle[] = array();
-
-					while ($MotCle = $SelectMotCle->fetch()) {
-						array_push($ListMotCle, GetOneEntry("LibMoCle", "MOTCLE", "NumMoCle", $MotCle['NumMoCle']) );
-					}
+						include "../General/connectionBD.php";
+						$GetMot = $DB->query('SELECT * FROM MOTCLE');
+						while ($Mot = $GetMot->fetch()) {
+							$GetLink = $DB->query('SELECT COUNT(*) FROM MOTCLEARTICLE WHERE NumArt ="'.$_POST[$primKey].'" AND NumMoCle = "'.$Mot["NumMoCle"].'" ');
+							while ($Count = $GetLink->fetch()) {
+								if ($Count['COUNT(*)'] > 0) {
 					?>
-
-
-					Mot-Clé : (Chaque mot doit être séparé d'un ; ) <input maxlength="60" type="text" name="MoCleList" value="<?php
-							foreach ($ListMotCle as $key => $value) {
-								if($key != 0){
-									if ($value == end($ListMotCle)) {
-										echo $value;
-									}
-									else{
-										echo $value.";";
-									}
-									
+									<input style="margin:1rem;" type="checkbox" name="<?php echo$Mot['NumMoCle']; ?>" id="<?php echo$Mot['NumMoCle']; ?>" value="<?php echo$Mot['NumMoCle']; ?>" checked><label for="<?php echo$Mot['NumMoCle']; ?>">"<?php echo$Mot['LibMoCle']; ?>"</label>
+					<?php
+								}
+								else{
+					?>
+									<input style="margin:1rem;" type="checkbox" name="<?php echo$Mot['NumMoCle']; ?>" id="<?php echo$Mot['NumMoCle']; ?>" value="<?php echo$Mot['NumMoCle']; ?>"><label for="<?php echo$Mot['NumMoCle']; ?>">"<?php echo$Mot['LibMoCle']; ?>"</label>
+					<?php
 								}
 							}
-					?>" />
-
+						}
+					?>  
 				</div>
 
 				<div> 

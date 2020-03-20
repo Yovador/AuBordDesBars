@@ -100,11 +100,15 @@
 					echo $e;
 					$DB->rollBack();
 				}
-
-				if ($_POST['MoCleList'] != "") {
-					include "LinkMotCle.php";
-				}
 				
+				$GetMot = $DB->query('SELECT * FROM MOTCLE');
+
+				while ($Mot = $GetMot->fetch()) {
+					if (isset($_POST[$Mot['NumMoCle']])) {
+						$NumMoCle = $Mot['NumMoCle'];
+						include "LinkMotCle.php";
+					}
+				}
 
 			}
 

@@ -4,11 +4,6 @@
 
 	$IsNumLang = $DB->query('SELECT COUNT(*) FROM LANGUE WHERE NumLang LIKE "'.$NumLang.'%"');
 	$InfoLang = $DB->query('SELECT * FROM LANGUE WHERE NumLang LIKE "'.$NumLang.'%"');
-
-		
-
-
-
 	
 
 	while ($CountNum = $IsNumLang->fetch()) {
