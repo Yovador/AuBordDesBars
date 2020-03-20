@@ -3,13 +3,15 @@
 <head>
 	<title>Au Bord Des Bars !</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link  href="assets/css/index.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
 
 </head>
 <body>
-	
+<div class="header">	
 	<?php include "./General/isAdmin.php" //$IsAdmin == true si Admin?>
-
-
 
 	<?php 
 
@@ -19,21 +21,33 @@
 <!-- TOUT LES STYLES PRESENT SUR DU HTML SONT A ENLEVÉ -->
 <!--///////////////////////////// USER /////////////////////////////////// -->
 
+<<<<<<< HEAD
 	<!-- Bouton Home -->
 	<div> <form action="./index.php" method="post"> <input  type="submit" name="id" value="Au Bord Des Bars" > 
 	<input  type="hidden" name="isAdmin" value="<?php echo $isAdmin; ?>"></form> 
 </div>
+=======
+	<!-- bouton home -->
+>>>>>>> 90f35e82165c429c32c7927f33e188c60e3bf04f
 	
+		<div id="titre" > <form action="./index.php" method="post"> 
+				<input id="boutonBars" type="submit" name="id" value="Au Bord Des Bars" > 
+				<span>
+				<input type="hidden" name="isAdmin" value="<?php echo $isAdmin; ?>">
+			</form> 
+		</div>
+		</div>
 
-	<?php
-		if (!$isAdmin) {
-			$sqlRequeteNew = 'SELECT * FROM ARTICLE WHERE DtCreA = (SELECT MAX(DtCreA) FROM ARTICLE)';
+		<?php
+			if (!$isAdmin) {
+				$sqlRequeteNew = 'SELECT * FROM ARTICLE WHERE DtCreA = (SELECT MAX(DtCreA) FROM ARTICLE)';
 
-			$Newest = $DB->query($sqlRequeteNew);
+				$Newest = $DB->query($sqlRequeteNew);
 
-			while ($NewArticle = $Newest->fetch()) {
+				while ($NewArticle = $Newest->fetch()) {
 
-	?>
+		?>
+	
 
 		<h2>Le Dernier Article</h2>
 				<div style="margin: 1rem; background-color: #EAE9EE ; " > 
