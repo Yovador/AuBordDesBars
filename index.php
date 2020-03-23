@@ -21,14 +21,13 @@
 <!-- TOUT LES STYLES PRESENT SUR DU HTML SONT A ENLEVÉ -->
 <!--///////////////////////////// USER /////////////////////////////////// -->
 
-<<<<<<< HEAD
 	<!-- Bouton Home -->
 	<div> <form action="./index.php" method="post"> <input  type="submit" name="id" value="Au Bord Des Bars" > 
 	<input  type="hidden" name="isAdmin" value="<?php echo $isAdmin; ?>"></form> 
 </div>
-=======
+
 	<!-- bouton home -->
->>>>>>> 90f35e82165c429c32c7927f33e188c60e3bf04f
+
 	
 		<div id="titre" > <form action="./index.php" method="post"> 
 				<input id="boutonBars" type="submit" name="id" value="Au Bord Des Bars" > 
