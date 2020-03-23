@@ -2,8 +2,13 @@
 	include "../General/connectionBD.php";
 	include "../General/GetOneEntry.php";
 
+	if(isset($_GET['NumArt'])){
+		$NumArt = $_GET['NumArt'];
+	}
 
-	$SelectArticle = $DB->query("SELECT * FROM ARTICLE WHERE NumArt = '".$_GET['NumArt']."'");
+
+	$SelectArticle = $DB->query("SELECT * FROM ARTICLE WHERE NumArt = '".$NumArt."'");
+
 
 	while ($Article = $SelectArticle->fetch()) {
 		$LibAngl = GetOneEntry("LibAngl", "ANGLE", "NumAngl", $Article['NumAngl']);
@@ -61,7 +66,7 @@
 
 	<?php 
 
-		$SelectMotCle = $DB->query('SELECT * FROM MOTCLEARTICLE WHERE NumArt = "'.$_GET['NumArt'].'"');
+		$SelectMotCle = $DB->query('SELECT * FROM MOTCLEARTICLE WHERE NumArt = "'.$NumArt.'"');
 
 		$ListMotCle[] = array();
 
@@ -85,6 +90,37 @@
 			}
 	?>
 
+	<?php
+		$GetLikes = $DB->query('SELECT * FROM ARTICLE WHERE NumArt = "'.$NumArt.'" ');
+
+		while ($Likes = $GetLikes->fetch()) {
+	?>
+
+			<div>
+				Likes : <?php if($Likes['Likes']!=""){echo $Likes['Likes'];} else{echo 0;} ?>				
+			</div>
+
+	<?php
+		}
+	?>
+
+	<h3> COMMENTAIRE </h3>
+
+	<?php 
+		$GetComment = $DB->query('SELECT * FROM COMMENT WHERE NumArt ="'.$NumArt.'"  ');
+		while ($Comment = $GetComment->fetch()) {
+	?>
+
+		<div> Écrit par : <?php echo $Comment['PseudoAuteur']; ?> | Date de création : <?php echo $Comment['DtCreC']; ?> </div>
+
+		<div> <?php echo $Comment['TitrCom']; ?> </div>
+
+		<div> <?php echo $Comment['LibCom']; ?> </div>
+
+
+	<?php 
+		}
+	?> 
 
 		</div>
 
