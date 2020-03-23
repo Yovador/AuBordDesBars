@@ -10,7 +10,7 @@
     font-family: 'Montserrat', sans-serif;
     background-color: #ffffff;
     border: none;
-    padding-top: 90px;
+    
 }
 #bouttonVisiteur{
     order: 1;
@@ -19,15 +19,13 @@
     color: #413C69;
     background-color: #ffffff;
     border: none;
-    padding-top: 90px;
+    
 }
 #titre{
     order: 3;
     font-size: 14pt;
     color: #413C69;
-    padding-top: 50px;
-    margin-left: 25em ;
-    margin-right: 25em ;
+    
 }
 #boutonBars{
     font-family: 'Bebas Neue', cursive;
