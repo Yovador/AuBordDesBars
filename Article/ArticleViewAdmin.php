@@ -104,6 +104,7 @@
 		}
 	?>
 
+	<h3> COMMENTAIRE </h3>
 
 	<?php 
 		$GetComment = $DB->query('SELECT * FROM COMMENT WHERE NumArt ="'.$NumArt.'"  ');
