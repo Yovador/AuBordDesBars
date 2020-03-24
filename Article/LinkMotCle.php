@@ -23,9 +23,6 @@
 					}
 				}
 
-
-
-
 				if ($CanSend) {
 					$data = array(
 						':NumArt'=> $NumArt, 

@@ -33,7 +33,7 @@
 		$DB->rollBack();
 	}
 
-	header('Location: Select.php');
+	header('Location: ./AllUser.php');
 	exit();
 
 ?>
