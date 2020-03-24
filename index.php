@@ -25,12 +25,11 @@
 	<div> <form action="./index.php" method="post"> <input  type="submit" name="id" value="Au Bord Des Bars" > 
 	<input  type="hidden" name="isAdmin" value="<?php echo $isAdmin; ?>"></form> 
 </div>
-<<<<<<< HEAD
+
 
 	<!-- bouton home -->
 
-=======
->>>>>>> cd7e2e2f488ca49cdd9716929ef323e24a2b285c
+
 	
 		<div id="titre" > <form action="./index.php" method="post"> 
 				<input id="boutonBars" type="submit" name="id" value="Au Bord Des Bars" > 
