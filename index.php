@@ -73,14 +73,15 @@
 
 			}
 	?> 
+	</div>
 
 
 	<!-- Partie tout les Articles -->
 
 
-	
-		<h2>Tout les Articles</h2>
-
+	<div class="touslesarticles">
+		<h2>Tous les articles</h2>
+			<hr>
 	<?php
 
 			$sqlRequeteAll = 'SELECT * FROM article ORDER BY DtCreA DESC';
@@ -89,7 +90,7 @@
 			while ($Article = $AllArticle->fetch()) {			
 	?>
 				<!-- Div d'un article  -->
-				<div style="margin: 1rem; background-color: #EAE9EE ; " > <!-- Style a enlevé  -->
+				<div style=" background-color: #EAE9EE ; " > <!-- Style a enlevé  -->
 
 					<!-- Image -->
 					<div> <img src="<?php echo $Article['UrlPhotA']; ?>"> </div>
@@ -111,6 +112,7 @@
 		}
 
 	?>
+	</div>
 
 <!--///////////////////////////// ADMIN /////////////////////////////////// -->
 	
