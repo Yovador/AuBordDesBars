@@ -1,24 +1,28 @@
 /*header*/
 .header{
     display: flex;
-    flex-direction: row;   
+    flex-direction: row;
+    height: 20vh;
+    
 }
 
 #bouttonAdmin{
     order: 2;
     font-family: 'Montserrat', sans-serif;
-    background-color: #ffffff;
     border: none;
-    width: 15vw;
+    font-size: 14pt;
+    color: #413C69;
+    width: 26vw;
+   
 }
 #bouttonVisiteur{
     order: 1;
     font-family: 'Montserrat', sans-serif;
     font-size: 14pt;
     color: #413C69;
-    background-color: #ffffff;
     border: none;
-    width: 15vw;
+    margin-left: 8vw;
+    
     
 }
 #titre{
@@ -31,14 +35,15 @@
     font-family: 'Bebas Neue', cursive;
     font-size: 50pt;
     color: #413C69;
-    background-color: #ffffff;
     border: none;
-    width: 30vw;
-    text-align: left;
+    background-color: white;
+    
+    
 }
 .indicateur{
     order: 4;
-    width: 15vw;
+    vertical-align:middle;
+    
 
 
 }
@@ -55,7 +60,7 @@
 }
 .footer{
     display: flex;
-    font-family: 'montserrat';
+    font-family: "montserrat";
     background-color: #AD62AA;
     
 
@@ -73,9 +78,6 @@
  margin-left: 8vw;
  padding-top: 3vh;
  text-align: left;
- 
- 
-
 }
 
 .menudroite {
@@ -88,6 +90,7 @@
 /* dernier article */
 .dernierarticle{
     margin-left: 15vw;
+    width: 70vw;
 }
 
 .dernierarticle h2 {
@@ -104,6 +107,7 @@ hr{
 
     .touslesarticles{
         margin-left: 15vw;
+        width: 70vw;
     }
     
     .touslesarticles h2 {
