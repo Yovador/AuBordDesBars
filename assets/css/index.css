@@ -38,6 +38,51 @@
 }
 .indicateur{
     order: 4;
+<<<<<<< HEAD
     width: 15vw;
+=======
+
+/* Footer */
+}
+.footer a {
+    text-decoration: none;
+    color: white;
+}
+.footer ul {
+    list-style: none;
+    font-size: 20px;
+    line-height: 1.6em;
+}
+.footer{
+    display: flex;
+    font-family: 'montserrat';
+    background-color: #AD62AA;
+    height: 18vh;
+
+}
+.grostitre{
+    text-transform: uppercase;
+    font-family: Bebas Neue;
+    font-size: 40px;
+    padding-top: 5vh;
+    width: 15vw;
+}
+.menugauche{
+ width: 35vw;
+ margin-left: 8vw;
+ padding-top: 3vh;
+ text-align: left;
+ 
+
+}
+
+.menudroite {
+    width: 30vw;
+    text-align: right;
+    padding-top: 3vh;
+    margin-right: 8vw;
+    
+    
+>>>>>>> db6b1e43bfdc2de4ff2af532aec7d7c5c54803ee
 }
 /*fin header*/

@@ -22,13 +22,17 @@
 <!--///////////////////////////// USER /////////////////////////////////// -->
 
 	<!-- Bouton Home -->
-		<div id="titre" > <form action="./index.php" method="post"> 
+	
+	<div id="titre" > <form action="./index.php" method="post"> 
 				<input id="boutonBars" type="submit" name="id" value="Au Bord Des Bars" > 
 				<span>
 				<input type="hidden" name="isAdmin" value="<?php echo $isAdmin; ?>">
 			</form> 
 		</div>
-		</div>
+
+	<!-- /bouton home -->
+		
+</div>
 
 		<?php
 			if (!$isAdmin) {
@@ -143,6 +147,11 @@
 					<form action="./MotCle/AllMot.php" method="post"> <input  type="submit" name="id" value="Voir la liste des Mots-Clés" ></form>
 		</div>
 	
+		<div style="margin: 1rem; ">
+			User : <form action="./User/FormCreate.php" method="post"> <input  type="submit" name="id" value="Ajouter un user" ></form>
+					<form action="./User/AllUser.php" method="post"> <input  type="submit" name="id" value="Voir la liste des user" ></form>
+		</div>
+
 	</div>
 
 
