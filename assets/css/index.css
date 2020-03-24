@@ -47,6 +47,47 @@
 
 }
 /*fin header*/
+/*cartes*/
+.card{
+    display: flex;
+    justify-content: space-around;
+    
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+}
+.background{
+    background-color: rgba(65, 60, 105, 0.11);
+    
+    z-index: 0;
+}
+.card-title{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20pt;
+    color: #413C69;
+    z-index: 10;
+}
+.btn{
+    font-family: 'montserrat', sans-serif;
+    font-size: 14 pt;
+    font-weight: 700;
+    background-color: #4A47A3;
+    border-color: #1C7CD5;
+    border-width: 1pt;
+    z-index: 20;
+    
+}
+
+.card-text{
+    font-family: 'Montserrat', sans-serif;
+    width: 16pt;
+    color: #413C69;
+    z-index: 30;
+}
+.btn:hover{
+    background-color: #1C7CD5;
+    border-color: #1C7CD5;
+}
 /* Footer */
 .footer a {
     text-decoration: none;
@@ -119,3 +160,6 @@ hr{
         background-color: #413C69;
         border: none;
       }
+
+
+/*fin tous les articles*/
