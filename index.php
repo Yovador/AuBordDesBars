@@ -22,10 +22,6 @@
 <!--///////////////////////////// USER /////////////////////////////////// -->
 
 	<!-- Bouton Home -->
-	<div> <form action="./index.php" method="post"> <input  type="submit" name="id" value="Au Bord Des Bars" > 
-	<input  type="hidden" name="isAdmin" value="<?php echo $isAdmin; ?>"></form> 
-</div>
-	
 		<div id="titre" > <form action="./index.php" method="post"> 
 				<input id="boutonBars" type="submit" name="id" value="Au Bord Des Bars" > 
 				<span>
