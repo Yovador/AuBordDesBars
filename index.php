@@ -45,21 +45,29 @@
 		?>
 	
 
-		<h2>Le Dernier Article</h2>
-				<div style="margin: 1rem; background-color: #EAE9EE ; " > 
-
-					<img heigth="300px" src="<?php echo $NewArticle['UrlPhotA']; ?>"> 
-
-					<!-- Titre -->
-					<div> <?php echo $NewArticle['LibTitrA']; ?> </div>
-
-					<!-- Chapo -->
-					<div> <?php echo $NewArticle['LibChapoA']; ?> </div>
-
-
-					<!-- Bouton Lire -->
-					<div> <form action="./Article/ArticleViewUser.php" method="get"> <input  type="submit" name="id" value="Lire l'article !" > <input  type="hidden" name="NumArt" value="<?php echo $NewArticle['NumArt']; ?>"></form> </div>
+	<h2>Le Dernier Article</h2>
+		<div>
+			<div class="card" >
+				<div class="background">	
+				  <img src="..." class="card-img-top" alt="...">
+				  <div class="card-body">
+				    	<!-- Titre -->
+						<h5 class="card-title"><?php echo $NewArticle['LibTitrA']; ?></h5>
+				    	<!-- Chapo -->
+						<p class="card-text"style="width: 18rem;"><?php echo $NewArticle['LibChapoA']; ?></p>
+				  		<!-- Bouton Lire -->
+				   		<form action="./Article/ArticleViewUser.php" method="get"> <input class="btn btn-primary"  type="submit" name="id" value="Lire l'article !" > <input  type="hidden" name="NumArt" value="<?php echo $NewArticle['NumArt']; ?>"></form></a>
+				  </div>
 				</div>
+			</div>
+			<img heigth="300px" src="<?php echo $NewArticle['UrlPhotA']; ?>"> 
+			
+			
+			
+			
+			
+			
+		</div>
 
 	<?php
 
@@ -67,7 +75,7 @@
 	?> 
 
 
-	<!-- Parti tout les Articles -->
+	<!-- Partie tout les Articles -->
 
 
 	
