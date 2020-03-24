@@ -49,6 +49,14 @@
 }
 /*fin header*/
 /*cartes*/
+.card{
+    display: flex;
+    justify-content: space-around;
+    
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+}
 .background{
     background-color: rgba(65, 60, 105, 0.11);
     
@@ -68,7 +76,7 @@
     border-color: #1C7CD5;
     border-width: 1pt;
     z-index: 20;
-    margin-left: 85vw;
+    
 }
 
 .card-text{
@@ -153,3 +161,6 @@ hr{
         background-color: #413C69;
         border: none;
       }
+
+
+/*fin tous les articles*/
