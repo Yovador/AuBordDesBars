@@ -152,6 +152,11 @@
 					<form action="./MotCle/AllMot.php" method="post"> <input  type="submit" name="id" value="Voir la liste des Mots-Clés" ></form>
 		</div>
 	
+		<div style="margin: 1rem; ">
+			User : <form action="./User/FormCreate.php" method="post"> <input  type="submit" name="id" value="Ajouter un user" ></form>
+					<form action="./User/AllUser.php" method="post"> <input  type="submit" name="id" value="Voir la liste des user" ></form>
+		</div>
+
 	</div>
 
 
