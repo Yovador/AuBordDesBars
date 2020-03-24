@@ -33,8 +33,11 @@
     color: #413C69;
     background-color: #ffffff;
     border: none;
-    
+    margin-left: auto;
+    margin-right: auto;
+
 }
 .indicateur{
     order: 4;
+
 }
