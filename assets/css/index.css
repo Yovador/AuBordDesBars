@@ -57,7 +57,7 @@
     display: flex;
     font-family: 'montserrat';
     background-color: #AD62AA;
-    height: 18vh;
+    
 
 }
 .grostitre{
@@ -66,12 +66,14 @@
     font-size: 40px;
     padding-top: 5vh;
     width: 15vw;
+    
 }
 .menugauche{
  width: 35vw;
  margin-left: 8vw;
  padding-top: 3vh;
  text-align: left;
+ 
  
 
 }
@@ -81,7 +83,36 @@
     text-align: right;
     padding-top: 3vh;
     margin-right: 8vw;
-    
-    
-
 }
+
+/* dernier article */
+.dernierarticle{
+    margin-left: 15vw;
+}
+
+.dernierarticle h2 {
+    font-family: "montserrat";
+    color: #413C69;
+}
+hr{
+    height: 3px;
+    background-color: #413C69;
+    border: none;
+  }
+
+/* tous les articles */
+
+    .touslesarticles{
+        margin-left: 15vw;
+    }
+    
+    .touslesarticles h2 {
+        
+        font-family: "montserrat";
+        color: #413C69;
+    }
+    hr{
+        height: 3px;
+        background-color: #413C69;
+        border: none;
+      }
