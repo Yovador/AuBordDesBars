@@ -1,48 +1,62 @@
 <?php 
 
+
+	include "FormInscription.php";
+
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 		$Submit = isset($_POST['Submit']) ? $_POST['Submit'] : '';
 
-		echo $_POST['Login'], $_POST['Pass'], $_POST['EMail'];
 		
 		if (!empty($Submit) && $Submit == 'Créé') {
 			if ($_POST['Login'] != "" && $_POST['Pass'] != "" && $_POST['EMail'] != ""){
-				echo "Hein";
 				include "../General/connectionBD.php";
-				try {
-						echo "What";
-						$DB->beginTransaction();
 
-						$insert = $DB->prepare("INSERT INTO USER (Login, Pass, LastName, FirstName, EMail, admin) VALUES(:Login, :Pass, :LastName, :FirstName, :EMail, :admin);");
+				$IsThereLogin = $DB->query('SELECT COUNT(*) FROM USER WHERE Login = "'.$_POST['Login'].'" ');
+				while ($Create = $IsThereLogin->fetch()) {
+					if ($Create['COUNT(*)'] == 0) {
+						try {
 
-					
-						$data = array(
-							":Login" => $_POST['Login'], 
-							":Pass" => $_POST['Pass'], 
-							":LastName" => $_POST['LastName'], 
-							":FirstName" => $_POST['FirstName'], 
-							":EMail" => $_POST['EMail'],
-							":admin" => 0,
-						);
+							$DB->beginTransaction();
 
-						$insert->execute($data);
-						$DB->commit();			
-				} 
+							$insert = $DB->prepare("INSERT INTO USER (Login, Pass, LastName, FirstName, EMail, admin) VALUES(:Login, :Pass, :LastName, :FirstName, :EMail, :admin);");
 
-				catch (PDOException $e) {
-					echo $e;
-					$DB->rollBack();
+						
+							$data = array(
+								":Login" => $_POST['Login'], 
+								":Pass" => password_hash($_POST['Pass'], PASSWORD_DEFAULT), 
+								":LastName" => $_POST['LastName'], 
+								":FirstName" => $_POST['FirstName'], 
+								":EMail" => $_POST['EMail'],
+								":admin" => 0,
+							);
+
+							$insert->execute($data);
+							$DB->commit();			
+						} 
+
+						catch (PDOException $e) {
+							echo $e;
+							$DB->rollBack();
+						}
+					}
+					else{
+						echo "Ce Pseudo est déja utilisé !";
+					}
+
 				}
 			}
 			else {
 				echo "<div style='color : red;'> Tout les champs ne sont pas rempli ! </div>";
 			}
+
+
+				
 		}
 
 	}
 
-	//header('Location: ../index.php');
-	//exit();
+	header('Location: ../index.php');
+	exit();
 
 ?>

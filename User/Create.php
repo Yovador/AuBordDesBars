@@ -13,35 +13,42 @@
 		if (!empty($Submit) && $Submit == 'Valider') {
 			if ($_POST['Login'] != "" && $_POST['Pass'] != "" && $_POST['EMail'] != ""){
 				include "../General/connectionBD.php";
-				try {
-							
-						$DB->beginTransaction();
+				$IsThereLogin = $DB->query('SELECT COUNT(*) FROM USER WHERE Login = "'.$_POST['Login'].'" ');
+				while ($Create = $IsThereLogin->fetch()) {
+					if ($Create['COUNT(*)'] == 0) {
+						try {
+									
+							$DB->beginTransaction();
 
-						$insert = $DB->prepare("INSERT INTO USER (Login, Pass, LastName, FirstName, EMail, admin) VALUES(:Login, :Pass, :LastName, :FirstName, :EMail, :admin);");
+							$insert = $DB->prepare("INSERT INTO USER (Login, Pass, LastName, FirstName, EMail, admin) VALUES(:Login, :Pass, :LastName, :FirstName, :EMail, :admin);");
 
-						if ( isset($_POST['admin'])) {
-							$admin = 1;
+							if ( isset($_POST['admin'])) {
+								$admin = 1;
+							}
+							else{
+								$admin = 0;
+							}
+						
+							$data = array(
+								":Login" => $_POST['Login'], 
+								":Pass" => password_hash($_POST['Pass'], PASSWORD_DEFAULT),  
+								":LastName" => $_POST['LastName'], 
+								":FirstName" => $_POST['FirstName'], 
+								":EMail" => $_POST['EMail'],
+								":admin" => $admin,
+							);
+
+							$insert->execute($data);
+							$DB->commit();			
+						} 
+						catch (PDOException $e) {
+							echo $e;
+							$DB->rollBack();
 						}
-						else{
-							$admin = 0;
-						}
-					
-						$data = array(
-							":Login" => $_POST['Login'], 
-							":Pass" => $_POST['Pass'], 
-							":LastName" => $_POST['LastName'], 
-							":FirstName" => $_POST['FirstName'], 
-							":EMail" => $_POST['EMail'],
-							":admin" => $admin,
-						);
-
-						$insert->execute($data);
-						$DB->commit();			
-				} 
-
-				catch (PDOException $e) {
-					echo $e;
-					$DB->rollBack();
+					}
+					else{
+						echo "Ce Pseudo est déja utilisé !";
+					}
 				}
 			}
 			else {

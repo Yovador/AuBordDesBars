@@ -1,6 +1,7 @@
 <?php 
 	include "./General/isAdmin.php"; //$IsAdmin == true si Admin 
 	include "./General/connectionBD.php";
+
 ?>
 <!DOCTYPE html>
 <html>
