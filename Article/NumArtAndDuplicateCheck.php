@@ -1,3 +1,7 @@
+<?php include "../General/isAdmin.php" //$IsAdmin == true si Admin ?>
+
+<?php if ($isAdmin) { ?>
+
 <?php 
 
 	$result = $DB->query("SELECT MAX(NumArt) AS NumArt FROM ARTICLE;");
@@ -20,3 +24,13 @@
 		}
 	}
  ?>
+
+ <?php 
+}
+else{
+	header('Location: ../index.php');
+	exit();
+	} 
+
+?>
+

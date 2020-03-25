@@ -1,3 +1,8 @@
+<?php include "../General/isAdmin.php" //$IsAdmin == true si Admin ?>
+
+<?php if ($isAdmin) { ?>
+
+
 <?php 
 
 	include $_SERVER['DOCUMENT_ROOT']."./General/connectionBD.php";
@@ -31,5 +36,14 @@
 
 	header('Location: AllMot.php');
 	exit();
+
+?>
+
+<?php 
+}
+else{
+	header('Location: ../index.php');
+	exit();
+	} 
 
 ?>

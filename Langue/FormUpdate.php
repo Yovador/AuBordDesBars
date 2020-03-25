@@ -1,3 +1,7 @@
+<?php include "../General/isAdmin.php" //$IsAdmin == true si Admin ?>
+
+<?php if ($isAdmin) { ?>
+
 <?php include "../General/SelectList.php";
 $primKey = "NumLang";?>
 
@@ -53,3 +57,12 @@ $primKey = "NumLang";?>
 	<p><form action="../index.php"><input type="submit" value="Retour"></form></p>
 </body>
 </html>
+
+<?php 
+}
+else{
+	header('Location: ../index.php');
+	exit();
+	} 
+
+?>

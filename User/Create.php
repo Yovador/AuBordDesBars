@@ -1,3 +1,8 @@
+<?php include "../General/isAdmin.php" //$IsAdmin == true si Admin ?>
+
+<?php if ($isAdmin) { ?>
+
+
 <?php 
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -14,18 +19,24 @@
 
 						$insert = $DB->prepare("INSERT INTO USER (Login, Pass, LastName, FirstName, EMail, admin) VALUES(:Login, :Pass, :LastName, :FirstName, :EMail, :admin);");
 
+						if ( isset($_POST['admin'])) {
+							$admin = 1;
+						}
+						else{
+							$admin = 0;
+						}
+					
 						$data = array(
 							":Login" => $_POST['Login'], 
 							":Pass" => $_POST['Pass'], 
 							":LastName" => $_POST['LastName'], 
 							":FirstName" => $_POST['FirstName'], 
 							":EMail" => $_POST['EMail'],
-							":admin" => 1,
-
+							":admin" => $admin,
 						);
 
 						$insert->execute($data);
-						$DB->commit();				
+						$DB->commit();			
 				} 
 
 				catch (PDOException $e) {
@@ -42,5 +53,14 @@
 
 	header('Location: ./AllUser.php');
 	exit();
+
+?>
+
+<?php 
+}
+else{
+	header('Location: ../index.php');
+	exit();
+	} 
 
 ?>

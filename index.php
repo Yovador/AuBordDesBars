@@ -1,3 +1,4 @@
+<?php include "./General/isAdmin.php" //$IsAdmin == true si Admin ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,29 +11,53 @@
 
 </head>
 <body>
-<div class="header">	
-	<?php include "./General/isAdmin.php" //$IsAdmin == true si Admin?>
 
+<div class="header">	
 	<?php 
 
 		include "./General/connectionBD.php";
 	?> 
 
 <!-- TOUT LES STYLES PRESENT SUR DU HTML SONT A ENLEVÉ -->
-<!--///////////////////////////// USER /////////////////////////////////// -->
 
 	<!-- Bouton Home -->
 	
-	<div id="titre" > <form action="./index.php" method="post"> 
-				<input id="boutonBars" type="submit" name="id" value="Au Bord Des Bars" > 
-				<span>
-				<input type="hidden" name="isAdmin" value="<?php echo $isAdmin; ?>">
-			</form> 
-		</div>
+	<div id="titre" > 
+		<form action="./index.php" method="post"> 
+			<input id="boutonBars" type="submit" name="id" value="Au Bord Des Bars" > 
+			<span>
+			<input type="hidden" name="isAdmin" value="<?php echo $isAdmin; ?>">
+		</form> 
+	</div>
 
 	<!-- /bouton home -->
+
+	<?php 
+		if (isset($_SESSION['IsConnect']) ){ 
+	?>
+			<div> 
+				<form action="./Connection/Deconnect.php" method="post"> 
+					<input type="submit" name="id" value="Deconnexion" > 
+				</form> 
+			</div>
+	<?php 
+		}
+	 	else{ 
+	 ?>
+			<div> 
+				<form action="./Connection/Connect.php" method="post"> 
+					<input type="submit" name="id" value="Connexion" > 
+				</form> 
+			</div>
+
+	<?php 
+		} 
+	?>
+
 		
 </div>
+
+	<!--///////////////////////////// USER /////////////////////////////////// -->
 
 		<?php
 			if (!$isAdmin) {
@@ -189,5 +214,6 @@
 		</ul>
 	</div>
 </div>
+
 </body>
 </html>

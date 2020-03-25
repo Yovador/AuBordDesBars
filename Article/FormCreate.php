@@ -1,3 +1,8 @@
+<?php include "../General/isAdmin.php" //$IsAdmin == true si Admin ?>
+
+<?php if ($isAdmin) { ?>
+
+
 	<?php
 include "../General/SelectList.php";?>
 
@@ -99,3 +104,11 @@ include "../General/SelectList.php";?>
 </body>
 </html>
 
+<?php 
+}
+else{
+	header('Location: ../index.php');
+	exit();
+	} 
+
+?>
