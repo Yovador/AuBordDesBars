@@ -11,6 +11,13 @@ include "../General/SelectList.php";?>
 <html>
 <head>
 	<title>Créer un Theme - Au Bord Des Bars</title>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link  href="../assets/css/index.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+	
 </head>
 <body>
 
@@ -38,6 +45,9 @@ include "../General/SelectList.php";?>
 	<p><form action="./AllTheme.php"><input type="submit" value="Retour"></form></p>
 	
 	<br>
+
+	 <?php include "../footer.php" //Affiche le Footer?>
+
 </body>
 </html>
 
