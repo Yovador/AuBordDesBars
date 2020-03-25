@@ -44,9 +44,9 @@
 
 		?>
 	
-
+<div class="dernierarticle">
 	<h2>Le Dernier Article</h2>
-		<div>
+		
 			<div class="card" >
 				<div class="background">	
 				  <img src="..." class="card-img-top" alt="...">
@@ -67,7 +67,7 @@
 			
 			
 			
-		</div>
+</div>
 
 	<?php
 
