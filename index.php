@@ -1,5 +1,5 @@
 <?php 
-	include "./General/isAdmin.php" //$IsAdmin == true si Admin 
+	include "./General/isAdmin.php"; //$IsAdmin == true si Admin 
 	include "./General/connectionBD.php";
 ?>
 <!DOCTYPE html>
@@ -54,6 +54,15 @@
 				</form> 
 			</div>
 
+			<!-- Bouton Inscription -->
+
+			<div> 
+				<form action="./Connection/FormInscription.php" method="post"> 
+					<input type="submit" name="id" value="Inscription" > 
+				</form> 
+			</div>
+
+
 	<?php 
 		} 
 	?>
@@ -65,7 +74,7 @@
 
 		<?php
 			if (!$isAdmin) {
-				$sqlRequeteNew = 'SELECT * FROM ARTICLE WHERE DtCreA = (SELECT MAX(DtCreA) FROM ARTICLE)';
+				$sqlRequeteNew = 'SELECT * FROM ARTICLE WHERE DtCreA = (SELECT MAX(DtCreA) FROM ARTICLE) LIMIT 1';
 
 				$Newest = $DB->query($sqlRequeteNew);
 
