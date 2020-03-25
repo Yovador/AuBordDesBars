@@ -2,7 +2,6 @@
 
 <head>
 </head>
-<?php echo $_SESSION['admin']; ?>
 <body>
 		<?php if(isset($_SESSION['admin'])){
 

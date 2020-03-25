@@ -11,7 +11,7 @@
 
 </head>
 <body>
-	
+
 <!-- contour -->
 <div class="bordures">
 	<div class="vertical-line">
@@ -45,7 +45,9 @@
 	<?php 
 		if (isset($_SESSION['IsConnect']) ){ 
 	?>
+			<!-- Bouton Deconnection -->
 			<div> 
+				Bonjour ! <?php echo $_SESSION['FirstName']; ?> <?php echo $_SESSION['LastName']; ?>
 				<form action="./Connection/Deconnect.php" method="post"> 
 					<input type="submit" name="id" value="Deconnexion" > 
 				</form> 
@@ -54,6 +56,9 @@
 		}
 	 	else{ 
 	 ?>
+
+			<!-- Bouton Connection -->
+
 			<div> 
 				<form action="./Connection/Connect.php" method="post"> 
 					<input type="submit" name="id" value="Connexion" > 
