@@ -12,16 +12,6 @@
 </head>
 <body>
 
-<!-- contour -->
-<div class="bordures">
-	<div class="vertical-line">
-		<div class="left-border"><span></span></div>
-		<div class="right-border"><span></span></div>	
-	</div>
-		<div class="top-border"><hr></div>
-		<div class="bot-border"><hr></div>
-</div>
-
 <div class="header">	
 	<?php 
 
