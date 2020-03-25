@@ -10,6 +10,17 @@
 
 </head>
 <body>
+<!-- contour -->
+<div class="bordures">
+	<div class="vertical-line">
+		<div class="left-border"><span></span></div>
+		<div class="right-border"><span></span></div>	
+	</div>
+		<div class="top-border"><hr></div>
+		<div class="bot-border"><hr></div>
+</div>
+
+
 <div class="header">	
 	<?php include "./General/isAdmin.php" //$IsAdmin == true si Admin?>
 
@@ -49,7 +60,7 @@
 	<div>
 		<div class="card" >
 			<div class="background">	
-			  <img src="<?php echo $NewArticle['UrlPhotA']; ?>" class="card-img-top" alt="...">
+			  <img src="<?php echo $NewArticle['UrlPhotA']; ?>" class="card-img-top" id="img-carte" alt="...">
 			  <div class="card-body">
 			    	<!-- Titre -->
 					<h5 class="card-title"><?php echo $NewArticle['LibTitrA']; ?></h5>

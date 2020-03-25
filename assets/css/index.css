@@ -13,7 +13,7 @@
     font-size: 14pt;
     color: #413C69;
     width: 26vw;
-   
+    
 }
 #bouttonVisiteur{
     order: 1;
@@ -43,11 +43,31 @@
 .indicateur{
     order: 4;
     vertical-align:middle;
-    
-
-
 }
-/*fin header*/
+
+/*contour*/
+.bordures{
+    
+    
+    position: fixed;
+    z-index: 99999;
+}
+.vertical-line{
+    border-left: 20px solid #AD62AA;
+    display: inline-block;
+    height: 100vh;
+    border-right: 20px solid #AD62AA;   
+}
+.left-border{
+    margin: 0 20px;
+}
+.right-border{
+    margin: 0, 0, 20px, 0;
+}
+.top-border{
+    position: absolute;
+    top: 0;
+}
 /*cartes*/
 .card{
     display: flex;
@@ -62,7 +82,7 @@
     
     z-index: 0;
 }
-.card-img-top{
+#img-carte{
     height: 300px;
 }
 .card-title{
@@ -79,6 +99,7 @@
     border-color: #1C7CD5;
     border-width: 1pt;
     z-index: 20;
+    
     
 }
 
