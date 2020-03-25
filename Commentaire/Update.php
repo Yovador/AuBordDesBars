@@ -37,7 +37,7 @@
 		$DB->rollBack();
 	}
 
-	header('Location: ./AllUser.php');
+	header('Location: ./AllComment.php');
 	exit();
 
 ?>

@@ -4,8 +4,7 @@
 <?php if ($isAdmin) { ?>
 
 
-	<?php
-include "../General/SelectList.php";?>
+<?php include "../General/SelectList.php";?>
 
 <!DOCTYPE html>
 <html>

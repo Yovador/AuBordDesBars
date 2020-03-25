@@ -4,7 +4,6 @@
 
 <?php 
 
-	include "FormCreate.php";
 	include "../General/GetOneEntry.php";
 	include "../General/SelectList.php";
 
