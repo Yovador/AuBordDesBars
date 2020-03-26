@@ -15,22 +15,16 @@
 
 </head>
 <body>
-<<<<<<< HEAD
 	
-<!-- contour 
+<!-- contour -->
 <div class="bordures">
 	<div class="vertical-line">
 		<div class="left-border"><span></span></div>
 		<div class="right-border"><span></span></div>	
 	</div>
 		<div class="top-border"><hr></div>
-</div>-->
+</div>
 
-=======
-<!-- contour -->
-
-
->>>>>>> 9c7b5e185b214c7584db4736f54417a95272410b
 
 <div class="header">	
 
