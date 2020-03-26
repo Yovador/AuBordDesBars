@@ -37,30 +37,29 @@
     color: #413C69;
     border: none;
     background-color: white;
-  
 }
-.indicateur{
-    order: 4;
-    vertical-align:middle;
-}
-
 /*contour*/
 .bordures{
     position: fixed;
-    z-index: 99999;
+    display: flex;
+    z-index: -10;
 }
 .vertical-line{
     border-left: 20px solid #AD62AA;
     display: inline-block;
     height: 100vh;
-    border-right: 20px solid #AD62AA;   
-}
-.left-border{
-    margin: 0 20px;
+    border-right: 20px solid #AD62AA;
+     
 }
 .right-border{
-    margin: 0 100vh;
+    margin: 0 0 0 97.2vw;
+    
+    
+    
+    
+    
 }
+
 .top-border{
     position: absolute;
     top: 0;
