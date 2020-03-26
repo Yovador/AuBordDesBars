@@ -52,8 +52,8 @@
 			}
 		}
 	}
-	//header('Location: ./AllLangue.php');
-	//exit();
+	header('Location: ./AllLangue.php');
+	exit();
 ?>
 
 <?php 

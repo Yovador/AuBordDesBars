@@ -15,7 +15,6 @@
 
 </head>
 <body>
-<<<<<<< HEAD
 	
 <!-- contour 
 <div class="bordures">
@@ -26,11 +25,7 @@
 		<div class="top-border"><hr></div>
 </div>-->
 
-=======
-<!-- contour -->
 
-
->>>>>>> 9c7b5e185b214c7584db4736f54417a95272410b
 
 <div class="header">	
 

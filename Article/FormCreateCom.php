@@ -11,16 +11,6 @@
 
 	<form action="ArticleViewUser.php" method="post">
 		<div> 
-			Pseudo de l'auteur : 
-			<input maxlength="20" type="text" name="PseudoAuteur"/>
-		</div>
-
-		<div> 
-			Mail de l'auteur : 
-			<input maxlength="60" type="text" name="EmailAuteur"/>
-		</div>
-
-		<div> 
 			Titre du commentaire : 
 			<input maxlength="60" type="text" name="TitrCom"/>
 		</div>

@@ -10,9 +10,9 @@
 
 	}
 
-	$GetInfo = $DB->query('SELECT * FROM COMMENT');
+	$GetInfo = $DB->query('SELECT * FROM COMMENT WHERE NumArt ="'.$NumArt.'" ');
 	while ($DuplicateCheck = $GetInfo->fetch()) {
-		if($DuplicateCheck['PseudoAuteur'] ==  $_POST['PseudoAuteur'] && $DuplicateCheck['EmailAuteur'] == $_POST['EmailAuteur'] && $DuplicateCheck['TitrCom'] == $_POST['TitrCom'] && $DuplicateCheck['TitrCom'] == $_POST['TitrCom'] && $DuplicateCheck['LibCom'] == $_POST['LibCom']){
+		if($DuplicateCheck['PseudoAuteur'] ==  $_SESSION['Login'] && $DuplicateCheck['EmailAuteur'] == $_SESSION['EMail'] && $DuplicateCheck['TitrCom'] == $_POST['TitrCom'] && $DuplicateCheck['TitrCom'] == $_POST['TitrCom'] && $DuplicateCheck['LibCom'] == $_POST['LibCom']){
 			$CanSend = false;
 		}
 		else{

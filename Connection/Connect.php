@@ -18,12 +18,13 @@
 
 					if (password_verify($_POST["Pass"], $Info['Pass'])) {
 						$_SESSION['Login'] = $Info['Login'];
-						$_SESSION['Pass'] = $Info['Pass'];
 						$_SESSION['FirstName'] = $Info['FirstName'];
 						$_SESSION['LastName'] = $Info['LastName'];
 						$_SESSION['EMail'] = $Info['EMail'];
 						$_SESSION['admin'] = $Info['admin'];
 						$_SESSION['IsConnect'] = true;
+						$_SESSION['Likes'] = array();
+
 						header('Location: ../index.php');
 						exit();
 					}

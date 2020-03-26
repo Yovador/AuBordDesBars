@@ -9,7 +9,7 @@
 
 		
 		if (!empty($Submit) && $Submit == 'Valider') {
-			if ($_POST['PseudoAuteur'] != "" && $_POST['EmailAuteur'] != "" && $_POST['TitrCom'] != "" && $_POST['LibCom'] != ""){
+			if ($_SESSION["Login"] != "" && $_SESSION['EMail'] != "" && $_POST['TitrCom'] != "" && $_POST['LibCom'] != ""){
 				include "../General/connectionBD.php";
 				try {
 					
@@ -27,8 +27,8 @@
 						$data = array(
 							':NumCom'=> $NumCom,
 							':DtCreC'=> $DtCreC,
-							':PseudoAuteur'=> $_POST["PseudoAuteur"],
-							':EmailAuteur'=> $_POST['EmailAuteur'],
+							':PseudoAuteur'=> $_SESSION["Login"],
+							':EmailAuteur'=> $_SESSION['EMail'],
 							':TitrCom'=> $_POST['TitrCom'],
 							':LibCom'=> $_POST['LibCom'],
 							':NumArt'=> $NumArt,
