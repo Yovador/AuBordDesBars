@@ -11,12 +11,11 @@
 		if ($_POST["Login"] != "" && $_POST["Pass"] != "") {
 			include '../General/connectionBD.php';
 			
-				echo $_POST["Login"];
+
 
 				$Get = $DB->query('SELECT * FROM USER WHERE Login ="'.$_POST["Login"].'" ');
 				while ($Info = $Get->fetch()) {
-					echo $Info['Pass'];
-					echo password_verify($_POST["Pass"], $Info['Pass']);
+
 					if (password_verify($_POST["Pass"], $Info['Pass'])) {
 						$_SESSION['Login'] = $Info['Login'];
 						$_SESSION['Pass'] = $Info['Pass'];
@@ -25,8 +24,8 @@
 						$_SESSION['EMail'] = $Info['EMail'];
 						$_SESSION['admin'] = $Info['admin'];
 						$_SESSION['IsConnect'] = true;
-						//header('Location: ../index.php');
-						//exit();
+						header('Location: ../index.php');
+						exit();
 					}
 					else{
 						echo "Mauvais mdp !";
