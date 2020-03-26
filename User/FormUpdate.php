@@ -1,51 +1,68 @@
-<?php include "../General/SelectList.php";
-$primKey = "Login";?>
+<?php include "../General/isAdmin.php" //$IsAdmin == true si Admin ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Modifier un User - Au Bord Des Bars</title>
-</head>
-<body>
-	<h2>Modifier un User</h2>
-	<form action="Update.php" method="post">
-	<?php 
+<?php if ($isAdmin) { ?>
+	<?php include "../General/SelectList.php";
+	$primKey = "Login";?>
 
-		include "../General/connectionBD.php";
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Modifier un User - Au Bord Des Bars</title>
+	</head>
+	<body>
+		<h2>Modifier un User</h2>
+		<form action="Update.php" method="post">
+		<?php 
 
-		try {
-			$request = $DB->query('SELECT * FROM USER WHERE '.$primKey.' ="'.$_POST[$primKey].'" ');
-			while ($Info = $request->fetch(PDO::FETCH_ASSOC)) {
-			?>	
-				<div> 
-					Prénom : 
-					<input maxlength="60" type="text" name="FirstName" value="<?php echo htmlspecialchars($Info['FirstName']); ?>"/>
-				</div>
+			include "../General/connectionBD.php";
 
-				<div> 
-					Nom de Famille : 
-					<input maxlength="60" type="text" name="LastName" value="<?php echo htmlspecialchars($Info['LastName']); ?>"/>
-				</div>
+			try {
+				$request = $DB->query('SELECT * FROM USER WHERE '.$primKey.' ="'.$_POST[$primKey].'" ');
+				while ($Info = $request->fetch(PDO::FETCH_ASSOC)) {
+				?>	
+					<div> 
+						Prénom : 
+						<input maxlength="60" type="text" name="FirstName" value="<?php echo htmlspecialchars($Info['FirstName']); ?>"/>
+					</div>
 
-				<div> 
-					Adresse Mail : 
-					<input maxlength="60" type="text" name="EMail" value="<?php echo htmlspecialchars($Info['EMail']); ?>"/>
-				</div>	
+					<div> 
+						Nom de Famille : 
+						<input maxlength="60" type="text" name="LastName" value="<?php echo htmlspecialchars($Info['LastName']); ?>"/>
+					</div>
 
-				<p><input  type="submit" name="id" value="Modifier" > <input  type="hidden" name="<?php echo $primKey ?>" value="<?php echo $Info[$primKey] ?>" > </p>
-			<?php 
+					<div> 
+						Adresse Mail : 
+						<input maxlength="60" type="text" name="EMail" value="<?php echo htmlspecialchars($Info['EMail']); ?>"/>
+					</div>
+
+					<div> 
+						Is Admin ? 
+						<input type="checkbox" name="admin" <?php if( $Info['admin']==1){echo "checked";} ?> />
+					</div>
+
+					<p><input  type="submit" name="id" value="Modifier" > <input  type="hidden" name="<?php echo $primKey ?>" value="<?php echo $Info[$primKey] ?>" > </p>
+				<?php 
+				}
 			}
-		}
 
-		catch (PDOException $e) {
-			echo $e;
-			$DB->rollBack();
-		}		
-	?>
-	</form>
+			catch (PDOException $e) {
+				echo $e;
+				$DB->rollBack();
+			}		
+		?>
+		</form>
 
-	
-	<p><form action="./AllUser.php"><input type="submit" value="Retour"></form></p>
+		
+		<p><form action="./AllUser.php"><input type="submit" value="Retour"></form></p>
 
-</body>
-</html>
+	</body>
+	</html>
+
+<?php 
+}
+else{
+	header('Location: ../index.php');
+	exit();
+	} 
+
+?>

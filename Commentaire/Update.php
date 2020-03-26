@@ -1,3 +1,7 @@
+<?php include "../General/isAdmin.php" //$IsAdmin == true si Admin ?>
+
+<?php if ($isAdmin) { ?>
+
 <?php 
 
 	include "../General/connectionBD.php";
@@ -33,7 +37,16 @@
 		$DB->rollBack();
 	}
 
-	header('Location: ./AllUser.php');
+	header('Location: ./AllComment.php');
 	exit();
+
+?>
+
+<?php 
+}
+else{
+	header('Location: ../index.php');
+	exit();
+	} 
 
 ?>

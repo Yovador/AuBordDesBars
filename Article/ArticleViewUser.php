@@ -127,6 +127,8 @@
 	 ?>
 
 <!-- Parties Comment -->
+
+	
 	
 	<?php include "CreateCom.php"; ?>
 

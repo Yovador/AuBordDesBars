@@ -1,3 +1,7 @@
+<?php include "../General/isAdmin.php" //$IsAdmin == true si Admin ?>
+
+<?php if ($isAdmin) { ?>
+
 <div> <form action="../index.php" method="post"> <input  type="submit" name="id" value="HOME" > <input  type="hidden" name="isAdmin" value="<?php echo "true"; ?>"></form> </div>
 
 <h2>Les Angles</h2>
@@ -36,3 +40,12 @@
 			}
 
 	 ?>
+
+<?php 
+}
+else{
+	header('Location: ../index.php');
+	exit();
+	} 
+
+?>

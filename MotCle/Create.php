@@ -1,8 +1,12 @@
+<?php include "../General/isAdmin.php" //$IsAdmin == true si Admin ?>
+
+<?php if ($isAdmin) { ?>
+
+
 <?php 
 
-	include "FormCreate.php";
-	include $_SERVER['DOCUMENT_ROOT']."/General/GetOneEntry.php";
-	include $_SERVER['DOCUMENT_ROOT']."./General/SelectList.php";
+	include "../General/GetOneEntry.php";
+	include "../General/SelectList.php";
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -11,7 +15,7 @@
 		
 		if (!empty($Submit) && $Submit == 'Valider') {
 			if ($_POST['LibMoCle'] != "" && $_POST['Lib1Lang'] != ""){
-				include $_SERVER['DOCUMENT_ROOT']."./General/connectionBD.php";
+				include "../General/connectionBD.php";
 				try {
 					
 					$NumLang = GetOneEntry("NumLang", "LANGUE", "Lib1Lang",$_POST["Lib1Lang"]);
@@ -51,5 +55,14 @@
 
 	header('Location: AllMot.php');
 	exit();
+
+?>
+
+<?php 
+}
+else{
+	header('Location: ../index.php');
+	exit();
+	} 
 
 ?>

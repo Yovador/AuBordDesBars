@@ -1,3 +1,7 @@
+<?php include "../General/isAdmin.php" //$IsAdmin == true si Admin ?>
+
+<?php if ($isAdmin) { ?>
+
 <?php 
 
 	$NumLang = strtoupper(substr($_POST['Lib1Lang'], 0, 4));
@@ -37,3 +41,12 @@
 
 
  ?>
+
+ <?php 
+}
+else{
+	header('Location: ../index.php');
+	exit();
+	} 
+
+?>

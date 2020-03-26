@@ -1,3 +1,7 @@
+<?php include "../General/isAdmin.php" //$IsAdmin == true si Admin ?>
+
+<?php if ($isAdmin) { ?>
+
 <?php include "../General/SelectList.php";
 $primKey = "NumAngl";?>
 
@@ -51,3 +55,12 @@ $primKey = "NumAngl";?>
 
 </body>
 </html>
+
+<?php 
+}
+else{
+	header('Location: ../index.php');
+	exit();
+	} 
+
+?>

@@ -1,3 +1,8 @@
+<?php 
+	include "./General/isAdmin.php"; //$IsAdmin == true si Admin 
+	include "./General/connectionBD.php";
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +15,7 @@
 
 </head>
 <body>
+<<<<<<< HEAD
 <!-- contour -->
 <div class="bordures">
 	<div class="vertical-line">
@@ -19,34 +25,69 @@
 		<div class="top-border"><hr></div>
 </div>
 
+=======
+>>>>>>> 3e24aa0cef66d747c880dfce58bb01aee313c986
 
 <div class="header">	
-	<?php include "./General/isAdmin.php" //$IsAdmin == true si Admin?>
-
-	<?php 
-
-		include "./General/connectionBD.php";
-	?> 
 
 <!-- TOUT LES STYLES PRESENT SUR DU HTML SONT A ENLEVÉ -->
-<!--///////////////////////////// USER /////////////////////////////////// -->
 
 	<!-- Bouton Home -->
 	
-	<div id="titre" > <form action="./index.php" method="post"> 
-				<input id="boutonBars" type="submit" name="id" value="Au Bord Des Bars" > 
-				<span>
-				<input type="hidden" name="isAdmin" value="<?php echo $isAdmin; ?>">
-			</form> 
-		</div>
+	<div id="titre" > 
+		<form action="./index.php" method="post"> 
+			<input id="boutonBars" type="submit" name="id" value="Au Bord Des Bars" > 
+			<span>
+			<input type="hidden" name="isAdmin" value="<?php echo $isAdmin; ?>">
+		</form> 
+	</div>
 
 	<!-- /bouton home -->
+
+	<?php 
+		if (isset($_SESSION['IsConnect']) ){ 
+	?>
+			<!-- Bouton Deconnection -->
+			<div> 
+				Bonjour ! <?php echo $_SESSION['FirstName']; ?> <?php echo $_SESSION['LastName']; ?>
+				<form action="./Connection/Deconnect.php" method="post"> 
+					<input type="submit" name="id" value="Deconnexion" > 
+				</form> 
+			</div>
+	<?php 
+		}
+	 	else{ 
+	 ?>
+
+			<!-- Bouton Connection -->
+
+			<div> 
+				<form action="./Connection/Connect.php" method="post"> 
+					<input type="submit" name="id" value="Connexion" > 
+				</form> 
+			</div>
+
+			<!-- Bouton Inscription -->
+
+			<div> 
+				<form action="./Connection/FormInscription.php" method="post"> 
+					<input type="submit" name="id" value="Inscription" > 
+				</form> 
+			</div>
+
+
+	<?php 
+		} 
+	?>
+
 		
 </div>
 
+	<!--///////////////////////////// USER /////////////////////////////////// -->
+
 		<?php
 			if (!$isAdmin) {
-				$sqlRequeteNew = 'SELECT * FROM ARTICLE WHERE DtCreA = (SELECT MAX(DtCreA) FROM ARTICLE)';
+				$sqlRequeteNew = 'SELECT * FROM ARTICLE WHERE DtCreA = (SELECT MAX(DtCreA) FROM ARTICLE) LIMIT 1';
 
 				$Newest = $DB->query($sqlRequeteNew);
 
@@ -181,30 +222,11 @@
 	 ?>
 
 
-
-
-
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-<div class="footer">
-	<div class="menugauche">
-		<ul>
-			<li><a href="">Contact</a></li>
-			<li><a href="">Archives</a></li>
-			<li><a href="">1 rue Jacques Ellul, 33800 Bordeaux</a></li>
-		</ul>
-	</div>
-	<div class="grostitre"><a href="">Au bord des bars</a>
-</div>
-	<div class="menudroite">
-		<ul>
-			<li><a href="">Mentions légales</a></li> 
-			<li><a href="">Protection des données</a></li>
-			<li><a href="">CGU</a></li>
-		</ul>
-	</div>
-</div>
+	<?php include "footer.php" //Affiche le Footer?>
+
 </body>
 </html>
