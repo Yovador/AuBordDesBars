@@ -27,7 +27,7 @@ include "../General/SelectList.php";?>
 			Langue:
 			<select type="text" name="Lib1Lang"> 
 				<option value=""> Choississez un pays </option>
-				<?php GetList("LANGUE", false ,$Info['NumLang'], "NumLang", "Lib1Lang")?>
+				<?php GetList("LANGUE", false ,$Info['NumLang'], "NumLang", "Lib1Lang", false, "", "")?>
 			</select>
 		</div>
 

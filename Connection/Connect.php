@@ -24,6 +24,8 @@
 						$_SESSION['admin'] = $Info['admin'];
 						$_SESSION['IsConnect'] = true;
 						$_SESSION['Likes'] = array();
+						$_SESSION['MotCle'] = array();
+
 
 						header('Location: ../index.php');
 						exit();

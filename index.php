@@ -15,7 +15,7 @@
 
 </head>
 <body>
-	
+
 <!-- contour -->
 <div class="bordures">
 	<div class="vertical-line">
@@ -173,7 +173,7 @@
 
 	<div style="margin: 1rem; ">
 		Écrire un article ou voir la liste complète pour les modifier
-		<form action="./Article/FormCreate.php" method="post"> <input  type="submit" name="id" value="Écrire un article" ></form>
+		<form action="./Article/Create.php" method="post"> <input  type="submit" name="id" value="Écrire un article" ></form>
 		<form action="./Article/AllArticle.php" method="post"> <input  type="submit" name="id" value="Voir La listes des Articles" ></form>
 
 	</div>

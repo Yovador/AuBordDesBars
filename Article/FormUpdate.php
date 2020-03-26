@@ -71,7 +71,7 @@ $primKey = "NumArt";?>
 				</div>
 
 				<div> 
-					UrlPhoto : <input type="file" name="File"/>
+					Image (2Mb maximum) : <input type="file" name="File"/>
 				</div>
 
 				<div> 
@@ -100,7 +100,7 @@ $primKey = "NumArt";?>
 		 			Angle : 
 		 			<select type="text" name="NomAngl"> 
 		 				<option value=""> Choississez un Angle </option>
-		 				<?php GetList("ANGLE", true ,$Info['NumAngl'], "NumAngl", "LibAngl") ?> 
+		 				<?php GetList("ANGLE", true ,$Info['NumAngl'], "NumAngl", "LibAngl", false, "", "") ?> 
 		 			</select>
 		 		</div>
 
@@ -108,7 +108,7 @@ $primKey = "NumArt";?>
 		 			Thematique : 
 		 			<select type="text" name="NomThem"> 
 		 				<option value=""> Choississez une Thematique </option>
-		 				<?php GetList("THEMATIQUE", true ,$Info['NumThem'], "NumThem", "LibThem")?> 
+		 				<?php GetList("THEMATIQUE", true ,$Info['NumThem'], "NumThem", "LibThem", false, "", "")?> 
 		 			</select>
 		 		</div>
 
@@ -116,7 +116,7 @@ $primKey = "NumArt";?>
 		 			Langue : 
 		 			<select type="text" name="NomLang"> 
 		 				<option value=""> Choississez une Langue </option>
-		 				<?php GetList("LANGUE", true ,$Info['NumLang'], "NumLang", "Lib1Lang") ?> 
+		 				<?php GetList("LANGUE", true ,$Info['NumLang'], "NumLang", "Lib1Lang", false, "", "") ?> 
 		 			</select>
 		 		</div>
 

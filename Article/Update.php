@@ -20,14 +20,12 @@
 		$NumLang = GetOneEntry("NumLang", "LANGUE", "Lib1Lang",$_POST['NomLang']);
 
 		if ($_FILES['File']['name']!=""){
-			$targetDir = "../assets/image";
+			$targetDir = "../assets/image/";
 			$imageArt = $_FILES['File']['name'];
 			$path = pathinfo($imageArt);
 			$filename = $_POST['NumArt'].str_replace(" ", "", substr($_POST["LibTitrA"], 0, 5));
-			$ext = $path['extension'];
 			$temp_name = $_FILES['File']['tmp_name'];
-			$path_filename_ext = $targetDir.$filename.".".$ext;
-
+			$path_filename_ext = $targetDir.$filename.".jpg";
 			move_uploaded_file($temp_name,$path_filename_ext);
 			$UrlPhotA = $path_filename_ext;
 			echo "Congratulations! File Uploaded Successfully.";
@@ -35,6 +33,14 @@
 			
 			if (!isset($UrlPhotA) ){
 				$UrlPhotA = "";
+			}
+
+
+			if ($_FILES['File']['size'] == 0) {
+				echo "test";
+				$GetUrl = $DB->query('SELECT UrlPhotA FROM ARTICLE WHERE NumArt ="'.$_POST['NumArt'].'" ');
+				$Url = $GetUrl->fetch();
+				$UrlPhotA = $Url['UrlPhotA'];
 			}
 
 

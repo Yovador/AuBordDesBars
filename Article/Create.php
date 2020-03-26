@@ -1,9 +1,6 @@
-<?php include "../General/isAdmin.php" //$IsAdmin == true si Admin ?>
-
-<?php if ($isAdmin) { ?>
-
 <?php
 
+	include "./FormCreate.php";
 	include "../General/GetOneEntry.php";
 	include "../General/SelectList.php";
 
@@ -36,13 +33,12 @@
 					$DtCreA = date('Y-m-j');
 
 					if ($_FILES['File']['name']!=""){
-						$targetDir = "../assets/image";
+						$targetDir = "../assets/image/";
 						$imageArt = $_FILES['File']['name'];
 						$path = pathinfo($imageArt);
 						$filename = $NumArt.str_replace(" ", "", substr($_POST["LibTitrA"], 0, 5));
-						$ext = $path['extension'];
 						$temp_name = $_FILES['File']['tmp_name'];
-						$path_filename_ext = $targetDir.$filename.".".$ext;
+						$path_filename_ext = $targetDir.$filename.".jpg";
 				
 						if (file_exists($path_filename_ext)) {
 							echo "Sorry, file already exists.";
@@ -89,6 +85,10 @@
 
 						$insert->execute($data);
 						$DB->commit();
+
+						header('Location: ./AllArticle.php');
+						exit();
+
 					}
 					else{
 						echo "DUPLICATE";
@@ -104,15 +104,6 @@
 					echo $e;
 					$DB->rollBack();
 				}
-				
-				$GetMot = $DB->query('SELECT * FROM MOTCLE');
-
-				while ($Mot = $GetMot->fetch()) {
-					if (isset($_POST[$Mot['NumMoCle']])) {
-						$NumMoCle = $Mot['NumMoCle'];
-						include "LinkMotCle.php";
-					}
-				}
 
 			}
 
@@ -123,16 +114,5 @@
 
 	}
 
-	header('Location: ./AllArticle.php');
-	exit();
-
-?>
-
-<?php 
-}
-else{
-	header('Location: ../index.php');
-	exit();
-	} 
 
 ?>

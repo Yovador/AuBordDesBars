@@ -31,7 +31,7 @@ include "../General/SelectList.php";?>
  			Pays : 
  			<select type="text" name="frPays"> 
  				<option value=""> Choississez un pays </option>
- 				<?php GetList("PAYS", false ,$Info['NumPays'], "NumPays", "frPays") ?> 
+ 				<?php GetList("PAYS", false ,$Info['NumPays'], "NumPays", "frPays", false, "", "") ?> 
  			</select>
  		</div>
 
