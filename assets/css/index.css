@@ -13,7 +13,7 @@
     font-size: 14pt;
     color: #413C69;
     width: 26vw;
-   
+    
 }
 #bouttonVisiteur{
     order: 1;
@@ -41,12 +41,30 @@
 }
 .indicateur{
     order: 4;
-    
-    
-
-
+    vertical-align:middle;
 }
-/*fin header*/
+
+/*contour*/
+.bordures{
+    position: fixed;
+    z-index: 99999;
+}
+.vertical-line{
+    border-left: 20px solid #AD62AA;
+    display: inline-block;
+    height: 100vh;
+    border-right: 20px solid #AD62AA;   
+}
+.left-border{
+    margin: 0 20px;
+}
+.right-border{
+    margin: 0 100vh;
+}
+.top-border{
+    position: absolute;
+    top: 0;
+}
 /*cartes*/
 .card{
     display: flex;
@@ -60,6 +78,9 @@
     background-color: rgba(65, 60, 105, 0.11);
     
     z-index: 0;
+}
+#img-carte{
+    height: 300px;
 }
 .card-title{
     font-family: 'Bebas Neue', cursive;
@@ -75,6 +96,7 @@
     border-color: #1C7CD5;
     border-width: 1pt;
     z-index: 20;
+    
     
 }
 
