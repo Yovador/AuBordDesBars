@@ -1,4 +1,13 @@
 /*header*/
+.top-border hr{
+    height: 20px;
+    background-color: #AD62AA ;
+    border: none;
+    width: 100vw;
+    margin: 0 0 0 0;
+
+}
+
 .header{
     display: flex;
     flex-direction: row;
@@ -6,22 +15,25 @@
     
 }
 
-#bouttonAdmin{
+.connection{
     order: 2;
     font-family: 'Montserrat', sans-serif;
     border: none;
     font-size: 14pt;
     color: #413C69;
-    width: 26vw;
+    width: 25vw;
+    padding-top: 3vh;
+    margin-left: 1vw;
     
 }
-#bouttonVisiteur{
+.inscription{
     order: 1;
     font-family: 'Montserrat', sans-serif;
     font-size: 14pt;
     color: #413C69;
     border: none;
     margin-left: 8vw;
+    padding-top: 3vh;
     
     
 }
@@ -32,39 +44,30 @@
     
 }
 #boutonBars{
+    padding-top: 1vh;
     font-family: 'Bebas Neue', cursive;
     font-size: 50pt;
     color: #413C69;
     border: none;
     background-color: white;
-  
 }
-.indicateur{
-    order: 4;
-    vertical-align:middle;
-}
-
 /*contour*/
 .bordures{
     position: fixed;
-    z-index: 99999;
+    display: flex;
+    z-index: -10;
 }
 .vertical-line{
     border-left: 20px solid #AD62AA;
     display: inline-block;
     height: 100vh;
-    border-right: 20px solid #AD62AA;   
-}
-.left-border{
-    margin: 0 20px;
+    border-right: 20px solid #AD62AA;
+     
 }
 .right-border{
-    margin: 0 100vh;
+    margin: 0 0 0 97.3vw;
 }
-.top-border{
-    position: absolute;
-    top: 0;
-}
+
 /*cartes*/
 .card{
     display: flex;
@@ -159,7 +162,7 @@
     font-family: "montserrat";
     color: #413C69;
 }
-hr{
+.dernierarticle hr{
     height: 3px;
     background-color: #413C69;
     border: none;
@@ -177,7 +180,7 @@ hr{
         font-family: "montserrat";
         color: #413C69;
     }
-    hr{
+    .touslesarticles hr{
         height: 3px;
         background-color: #413C69;
         border: none;
