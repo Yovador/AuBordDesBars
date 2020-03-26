@@ -1,0 +1,14 @@
+.placeholder{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14pt;
+    color: #413C69;
+}
+.btn{
+    font-family: 'montserrat', sans-serif;
+    font-size: 14 pt;
+    font-weight: 700;
+    background-color: #4A47A3;
+    border-color: #1C7CD5;
+    border-width: 1pt;
+    z-index: 20;    
+}

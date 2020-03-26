@@ -8,7 +8,7 @@
 		$Submit = isset($_POST['Submit']) ? $_POST['Submit'] : '';
 
 		
-		if (!empty($Submit) && $Submit == 'Créé') {
+		if (!empty($Submit) && $Submit == 'Inscription') {
 			if ($_POST['Login'] != "" && $_POST['Pass'] != "" && $_POST['EMail'] != ""){
 				include "../General/connectionBD.php";
 
@@ -16,7 +16,7 @@
 				while ($Create = $IsThereLogin->fetch()) {
 					if ($Create['COUNT(*)'] == 0) {
 						try {
-
+							echo "Inscrit !";
 							$DB->beginTransaction();
 
 							$insert = $DB->prepare("INSERT INTO USER (Login, Pass, LastName, FirstName, EMail, admin) VALUES(:Login, :Pass, :LastName, :FirstName, :EMail, :admin);");
@@ -41,7 +41,7 @@
 						}
 					}
 					else{
-						echo "Ce Pseudo est déja utilisé !";
+						echo "Ce login est déja utilisé !";
 					}
 
 				}

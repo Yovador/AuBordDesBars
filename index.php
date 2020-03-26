@@ -15,7 +15,12 @@
 
 </head>
 <body>
+
 <!-- contour -->
+
+	
+<!-- contour -->
+
 <div class="bordures">
 	<div class="vertical-line">
 		<div class="left-border"></div>
@@ -23,6 +28,7 @@
 	</div>
 		<div class="top-border"><hr></div>
 </div>
+
 
 
 <div class="header">	

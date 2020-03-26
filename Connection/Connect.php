@@ -11,7 +11,7 @@
 		if ($_POST["Login"] != "" && $_POST["Pass"] != "") {
 			include '../General/connectionBD.php';
 			
-				
+
 
 				$Get = $DB->query('SELECT * FROM USER WHERE Login ="'.$_POST["Login"].'" ');
 				while ($Info = $Get->fetch()) {
