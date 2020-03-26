@@ -26,10 +26,10 @@
 		<div class="left-border"></div>
 		<div class="right-border"></div>	
 	</div>
-		<div class="top-border"><hr></div>
+	
 </div>
 
-
+<div class="top-border"><hr></div>
 
 <div class="header">	
 
@@ -37,6 +37,7 @@
 
 	<!-- Bouton Home -->
 	
+
 	<div id="titre" > 
 		<form action="./index.php" method="post"> 
 			<input id="boutonBars" type="submit" name="id" value="Au Bord Des Bars" > 
@@ -51,7 +52,7 @@
 		if (isset($_SESSION['IsConnect']) ){ 
 	?>
 			<!-- Bouton Deconnection -->
-			<div> 
+			<div class="deconnection"> 
 				Bonjour ! <?php echo $_SESSION['FirstName']; ?> <?php echo $_SESSION['LastName']; ?>
 				<form action="./Connection/Deconnect.php" method="post"> 
 					<input type="submit" name="id" value="Deconnexion" > 
@@ -64,7 +65,7 @@
 
 			<!-- Bouton Connection -->
 
-			<div> 
+			<div class="connection"> 
 				<form action="./Connection/Connect.php" method="post"> 
 					<input type="submit" name="id" value="Connexion" > 
 				</form> 
@@ -72,7 +73,7 @@
 
 			<!-- Bouton Inscription -->
 
-			<div> 
+			<div class="inscription"> 
 				<form action="./Connection/FormInscription.php" method="post"> 
 					<input type="submit" name="id" value="Inscription" > 
 				</form> 
@@ -100,7 +101,7 @@
 	
 <div class="dernierarticle">
 	<h2>Le Dernier Article</h2>
-		
+	<hr>
 			<div class="card" >
 				<div class="background">	
 				  <img src="..." class="card-img-top" alt="...">
