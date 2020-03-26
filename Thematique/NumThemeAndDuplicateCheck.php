@@ -1,8 +1,3 @@
-<?php include "../General/isAdmin.php" //$IsAdmin == true si Admin ?>
-
-<?php if ($isAdmin) { ?>
-
-
 <?php 
 
 	
@@ -12,20 +7,18 @@
 
 		if ($CountNum['COUNT(*)'] > 0) { 
 			//Create NumThem si il y a déja au moins un theme qui a la même langue que lui
-			while($Extract = $GetThem->fetch()){
 
-				$getmax = $DB->query("SELECT MAX(NumThem) AS NumThem FROM THEMATIQUE WHERE NumLang = '".$NumLang."'");
-				while($max = $getmax->fetch()){
+			$getmax = $DB->query("SELECT MAX(NumThem) AS NumThem FROM THEMATIQUE WHERE NumLang = '".$NumLang."'");
+			while($max = $getmax->fetch()){
 
-					if ($CountNum['COUNT(*)'] < 9) {
-						$NumThem = substr($max['NumThem'], 0, 5)."0".((int)substr($max['NumThem'],5, 7)+1);
-					}
-
-					else{
-						$NumThem = substr($max['NumThem'], 0, 5).((int)substr($max['NumThem'],5, 7)+1);
-					}
-
+				if ($CountNum['COUNT(*)'] < 9) {
+					$NumThem = substr($max['NumThem'], 0, 5)."0".((int)substr($max['NumThem'],5, 7)+1);
 				}
+
+				else{
+					$NumThem = substr($max['NumThem'], 0, 5).((int)substr($max['NumThem'],5, 7)+1);
+				}
+
 			}
 
 			//Duplicate Check
@@ -72,13 +65,3 @@
 
 	}
  ?>
-
-
-<?php 
-}
-else{
-	header('Location: ../index.php');
-	exit();
-	} 
-
-?>

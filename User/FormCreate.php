@@ -22,7 +22,7 @@
 
 			<div> 
 				Mot de passe : 
-				<input maxlength="60" type="text" name="Pass"/>
+				<input maxlength="60" type="password" name="Pass"/>
 			</div>
 
 			<div> 

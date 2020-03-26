@@ -37,8 +37,7 @@
     color: #413C69;
     border: none;
     background-color: white;
-    
-    
+  
 }
 .indicateur{
     order: 4;
@@ -47,8 +46,6 @@
 
 /*contour*/
 .bordures{
-    
-    
     position: fixed;
     z-index: 99999;
 }
@@ -62,7 +59,7 @@
     margin: 0 20px;
 }
 .right-border{
-    margin: 0, 0, 20px, 0;
+    margin: 0 100vh;
 }
 .top-border{
     position: absolute;
@@ -185,6 +182,3 @@ hr{
         background-color: #413C69;
         border: none;
       }
-
-
-/*fin tous les articles*/

@@ -41,8 +41,7 @@ if ($isAdmin) {
 
 		header('Location: ./AllUser.php');
 		exit();
-		}
-	}
+}
 
 else{
 	header('Location: ../index.php');

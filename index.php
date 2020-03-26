@@ -1,4 +1,8 @@
-<?php include "./General/isAdmin.php" //$IsAdmin == true si Admin ?>
+<?php 
+	include "./General/isAdmin.php"; //$IsAdmin == true si Admin 
+	include "./General/connectionBD.php";
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,12 +15,11 @@
 
 </head>
 <body>
+<!-- contour -->
+
+
 
 <div class="header">	
-	<?php 
-
-		include "./General/connectionBD.php";
-	?> 
 
 <!-- TOUT LES STYLES PRESENT SUR DU HTML SONT A ENLEVÉ -->
 
@@ -55,6 +58,15 @@
 				</form> 
 			</div>
 
+			<!-- Bouton Inscription -->
+
+			<div> 
+				<form action="./Connection/FormInscription.php" method="post"> 
+					<input type="submit" name="id" value="Inscription" > 
+				</form> 
+			</div>
+
+
 	<?php 
 		} 
 	?>
@@ -66,7 +78,7 @@
 
 		<?php
 			if (!$isAdmin) {
-				$sqlRequeteNew = 'SELECT * FROM ARTICLE WHERE DtCreA = (SELECT MAX(DtCreA) FROM ARTICLE)';
+				$sqlRequeteNew = 'SELECT * FROM ARTICLE WHERE DtCreA = (SELECT MAX(DtCreA) FROM ARTICLE) LIMIT 1';
 
 				$Newest = $DB->query($sqlRequeteNew);
 
@@ -74,23 +86,30 @@
 
 		?>
 	
-
+<div class="dernierarticle">
 	<h2>Le Dernier Article</h2>
-	<div>
-		<div class="card" >
-			<div class="background">	
-			  <img src="<?php echo $NewArticle['UrlPhotA']; ?>" class="card-img-top" id="img-carte" alt="...">
-			  <div class="card-body">
-			    	<!-- Titre -->
-					<h5 class="card-title"><?php echo $NewArticle['LibTitrA']; ?></h5>
-			    	<!-- Chapo -->
-					<p class="card-text"style="width: 18rem;"><?php echo $NewArticle['LibChapoA']; ?></p>
-			  		<!-- Bouton Lire -->
-			   		<form action="./Article/ArticleViewUser.php" method="get"> <input class="btn btn-primary"  type="submit" name="id" value="Lire l'article !" > <input  type="hidden" name="NumArt" value="<?php echo $NewArticle['NumArt']; ?>"></form>
-			  </div>
+		
+			<div class="card" >
+				<div class="background">	
+				  <img src="..." class="card-img-top" alt="...">
+				  <div class="card-body">
+				    	<!-- Titre -->
+						<h5 class="card-title"><?php echo $NewArticle['LibTitrA']; ?></h5>
+				    	<!-- Chapo -->
+						<p class="card-text"style="width: 18rem;"><?php echo $NewArticle['LibChapoA']; ?></p>
+				  		<!-- Bouton Lire -->
+				   		<form action="./Article/ArticleViewUser.php" method="get"> <input class="btn btn-primary"  type="submit" name="id" value="Lire l'article !" > <input  type="hidden" name="NumArt" value="<?php echo $NewArticle['NumArt']; ?>"></form>
+				  </div>
+				</div>
 			</div>
-		</div>
-	</div>
+			<img heigth="300px" src="<?php echo $NewArticle['UrlPhotA']; ?>"> 
+			
+			
+			
+			
+			
+			
+</div>
 
 	<?php
 
@@ -194,31 +213,11 @@
 	 ?>
 
 
-
-
-
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-<div class="footer">
-	<div class="menugauche">
-		<ul>
-			<li><a href="">Contact</a></li>
-			<li><a href="">Archives</a></li>
-			<li><a href="">1 rue Jacques Ellul, 33800 Bordeaux</a></li>
-		</ul>
-	</div>
-	<div class="grostitre"><a href="">Au bord des bars</a>
-</div>
-	<div class="menudroite">
-		<ul>
-			<li><a href="">Mentions légales</a></li> 
-			<li><a href="">Protection des données</a></li>
-			<li><a href="">CGU</a></li>
-		</ul>
-	</div>
-</div>
+	<?php include "footer.php" //Affiche le Footer?>
 
 </body>
 </html>

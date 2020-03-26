@@ -11,6 +11,13 @@ $primKey = "NumThem";?>
 <html>
 <head>
 	<title>Modifier un Theme - Au Bord Des Bars</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link  href="../assets/css/index.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
 	<form action="Update.php" method="post">
@@ -54,6 +61,8 @@ $primKey = "NumThem";?>
 
 	
 	<p><form action="./AllTheme.php"><input type="submit" value="Retour"></form></p>
+
+	 <?php include "../footer.php" //Affiche le Footer?>
 
 </body>
 </html>
