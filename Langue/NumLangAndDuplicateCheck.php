@@ -1,52 +1,33 @@
-<?php include "../General/isAdmin.php" //$IsAdmin == true si Admin ?>
-
-<?php if ($isAdmin) { ?>
-
 <?php 
 
-	$NumLang = strtoupper(substr($_POST['Lib1Lang'], 0, 4));
+	$GetMax = $DB->query("SELECT MAX(NumLang) AS NumLang FROM LANGUE;");
 
-	$IsNumLang = $DB->query('SELECT COUNT(*) FROM LANGUE WHERE NumLang LIKE "'.$NumLang.'%"');
-	$InfoLang = $DB->query('SELECT * FROM LANGUE WHERE NumLang LIKE "'.$NumLang.'%"');
 	
 
-	while ($CountNum = $IsNumLang->fetch()) {
+	if ($GetMax) {
 
-		if ($CountNum['COUNT(*)'] > 0) {
+	    $Max = $GetMax->fetch();
+	    $NumLang = $NumPays.((int)substr($Max["NumLang"],strlen($Max["NumLang"])-2,strlen($Max["NumLang"]))+1);
 
-			while ($DuplicateCheck = $InfoLang->fetch()) {
-				if ( $DuplicateCheck['Lib1Lang'] == $_POST['Lib1Lang'] && $DuplicateCheck['Lib2Lang'] == $_POST['Lib2Lang'] && $DuplicateCheck['NumPays'] == $NumPays) {
-					$CanSend = false;
-				}
-				else{
-					
-					$CanSend = true;
-				}
-
-			}
-		}
-		else{
-			$CanSend = true;
-		}
-		
-
-		if ($CountNum['COUNT(*)'] < 9) {
-			$NumLang = $NumLang . "0" . ($CountNum['COUNT(*)']+1);
-		}
-		else{
-			$NumLang = $NumLang . ($CountNum['COUNT(*)']+1);
-		}
 	}
 
+	$InfoLang = $DB->query('SELECT * FROM LANGUE WHERE NumPays = "'.$NumPays.'%"');
+
+
+
+		while ($DuplicateCheck = $InfoLang->fetch()) {
+			if ( $DuplicateCheck['Lib1Lang'] == $_POST['Lib1Lang'] && $DuplicateCheck['Lib2Lang'] == $_POST['Lib2Lang']) {
+				$CanSend = false;
+			}
+			else{
+				
+				$CanSend = true;
+			}
+
+		}
+		if (!isset($CanSend)) {
+			$CanSend = true;
+		}
 
 
  ?>
-
- <?php 
-}
-else{
-	header('Location: ../index.php');
-	exit();
-	} 
-
-?>
