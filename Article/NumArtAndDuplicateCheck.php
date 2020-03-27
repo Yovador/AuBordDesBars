@@ -12,7 +12,7 @@
 
 	$GetInfo = $DB->query('SELECT * FROM ARTICLE');
 	while ($DuplicateCheck = $GetInfo->fetch()) {
-		if($DuplicateCheck['LibTitrA'] ==  $_POST['LibTitrA'] && $DuplicateCheck['NumLang'] == $NumLang && $DuplicateCheck['NumAngl'] == $NumAngl && $DuplicateCheck['NumThem'] == $NumThem){
+		if($DuplicateCheck['LibTitrA'] ==  $_SESSION['LibTitrA'] && $DuplicateCheck['NumLang'] == $NumLang && $DuplicateCheck['NumAngl'] == $NumAngl && $DuplicateCheck['NumThem'] == $NumThem){
 			$CanSend = false;
 		}
 		else{

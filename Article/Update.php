@@ -13,52 +13,40 @@
 
 
 		$DB->beginTransaction();
-		$insert = $DB->prepare('UPDATE ARTICLE SET '.$Set.' WHERE NumArt ="'.$_POST['NumArt'].'" ');
+		$insert = $DB->prepare('UPDATE ARTICLE SET '.$Set.' WHERE NumArt ="'.$_SESSION['NumArt'].'" ');
 
-		$NumAngl = GetOneEntry("NumAngl", "ANGLE", "LibAngl",$_POST['NomAngl']);
-		$NumThem = GetOneEntry("NumThem", "THEMATIQUE", "LibThem",$_POST['NomThem']);
-		$NumLang = GetOneEntry("NumLang", "LANGUE", "Lib1Lang",$_POST['NomLang']);
+		$NumAngl = GetOneEntry("NumAngl", "ANGLE", "LibAngl",$_SESSION['NomAngl']);
+		$NumThem = GetOneEntry("NumThem", "THEMATIQUE", "LibThem",$_SESSION['NomThem']);
+		$NumLang = GetOneEntry("NumLang", "LANGUE", "Lib1Lang",$_SESSION['NomLang']);
 
-		if ($_FILES['File']['name']!=""){
-			$targetDir = "../assets/image/";
-			$imageArt = $_FILES['File']['name'];
-			$path = pathinfo($imageArt);
-			$filename = $_POST['NumArt'].str_replace(" ", "", substr($_POST["LibTitrA"], 0, 5));
-			$temp_name = $_FILES['File']['tmp_name'];
-			$path_filename_ext = $targetDir.$filename.".jpg";
-			move_uploaded_file($temp_name,$path_filename_ext);
-			$UrlPhotA = $path_filename_ext;
-			echo "Congratulations! File Uploaded Successfully.";
+		echo $_SESSION['UrlPhotA'];
+
+		if ($_SESSION['UrlPhotA'] != "") {
+			$UrlPhotA = $_SESSION['UrlPhotA'];
 		}
-			
-			if (!isset($UrlPhotA) ){
-				$UrlPhotA = "";
-			}
-
-
-			if ($_FILES['File']['size'] == 0) {
-				echo "test";
-				$GetUrl = $DB->query('SELECT UrlPhotA FROM ARTICLE WHERE NumArt ="'.$_POST['NumArt'].'" ');
-				$Url = $GetUrl->fetch();
+		else{
+			$GetUrl = $DB->query('SELECT UrlPhotA FROM ARTICLE WHERE NumArt ="'.$_SESSION['NumArt'].'"');
+			while($Url = $GetUrl->fetch()){
 				$UrlPhotA = $Url['UrlPhotA'];
-			}
-
-
+			}			
+		}
+		
+		
 		$data = array(
 
-				':LibTitrA'=> $_POST["LibTitrA"],
-				':LibChapoA'=> $_POST["LibChapoA"],
-				':LibAccrochA'=> $_POST["LibAccrochA"],
-				':Parag1A'=> $_POST["Parag1A"],
-				':LibSsTitr1'=> $_POST["LibSsTitr1"],
-				':Parag2A'=> $_POST["Parag2A"],
-				':LibSsTitr2'=> $_POST["LibSsTitr2"],
-				':Parag3A'=> $_POST["Parag3A"],
-				':LibConclA'=> $_POST["LibConclA"],
-				':UrlPhotA'=> $UrlPhotA,
-				':NumAngl'=> $NumAngl,
-				':NumThem'=> $NumThem,
-				':NumLang'=> $NumLang,
+					':LibTitrA'=> $_SESSION["LibTitrA"],
+					':LibChapoA'=> $_SESSION["LibChapoA"],
+					':LibAccrochA'=> $_SESSION["LibAccrochA"],
+					':Parag1A'=> $_SESSION["Parag1A"],
+					':LibSsTitr1'=> $_SESSION["LibSsTitr1"],
+					':Parag2A'=> $_SESSION["Parag2A"],
+					':LibSsTitr2'=> $_SESSION["LibSsTitr2"],
+					':Parag3A'=> $_SESSION["Parag3A"],
+					':LibConclA'=> $_SESSION["LibConclA"],
+					':UrlPhotA'=> $UrlPhotA,
+					':NumAngl'=> $NumAngl,
+					':NumThem'=> $NumThem,
+					':NumLang'=> $NumLang,
 
 		);
 
@@ -76,28 +64,20 @@
 	$DB->beginTransaction();
 	$insert = $DB->prepare("DELETE FROM MOTCLEARTICLE WHERE NumArt = :NumArt  ");
 	$data = array(
-		':NumArt'=>$_POST["NumArt"],
+		':NumArt'=>$_SESSION["NumArt"],
 
 	);
 	
 	$insert->execute($data);
 	$DB->commit();
 
-
-	$NumArt = $_POST["NumArt"];
-
-	$GetMot = $DB->query('SELECT * FROM MOTCLE');
-
-	while ($Mot = $GetMot->fetch()) {
-		if (isset($_POST[$Mot['NumMoCle']])) {
-			$NumMoCle = $Mot['NumMoCle'];
-			include "LinkMotCle.php";
-		}
+	$NumArt = $_SESSION["NumArt"];
+	foreach ($_SESSION['MotCle'] as $key => $value) {
+		$NumMoCle = GetOneEntry("NumMoCle", "MOTCLE", "LibMoCle", $value);
+		include "LinkMotCle.php";
 	}
 
-
-		echo "Updated !";
-
+	include "../General/UnsetCreate.php";
 
 	header('Location: ./AllArticle.php');
 	exit();

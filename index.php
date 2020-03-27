@@ -1,6 +1,8 @@
 <?php 
 	include "./General/isAdmin.php"; //$IsAdmin == true si Admin 
 	include "./General/connectionBD.php";
+	include "./General/UnsetCreate.php";
+
 
 ?>
 <!DOCTYPE html>
@@ -113,7 +115,7 @@
 
 	<div style="margin: 1rem; ">
 		Écrire un article ou voir la liste complète pour les modifier
-		<form action="./Article/Create.php" method="post"> <input  type="submit" name="id" value="Écrire un article" ></form>
+		<form action="./Article/FormCreate/FormCreate.php" method="post"> <input  type="submit" name="id" value="Écrire un article" ></form>
 		<form action="./Article/AllArticle.php" method="post"> <input  type="submit" name="id" value="Voir La listes des Articles" ></form>
 
 	</div>
