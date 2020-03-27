@@ -18,6 +18,9 @@
 					date_default_timezone_set('Europe/Paris');
 					$DtCreC = date('Y-m-j H:i:s');
 					
+					if (!isset($CanSend)) {
+						$CanSend = true;
+					}
 
 					if ($CanSend) {
 						$DB->beginTransaction();
