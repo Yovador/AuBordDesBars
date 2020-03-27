@@ -3,6 +3,9 @@
 
 <?php if ($isAdmin) { ?>
 
+<?php include "../General/UnsetCreate.php" ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +22,7 @@
 	<h2>Les Articles</h2>
 
 	<form action="./AllArticle.php" method="post"> <input  type="submit" name="id" value="Voir La listes des Articles" ></form>
-	<form action="./Create.php" method="post"> <input  type="submit" name="id" value="Écrire un article" ></form>
+	<form action="./FormCreate/FormCreate.php" method="post"> <input  type="submit" name="id" value="Écrire un article" ></form>
 
 
 	<?php
@@ -45,7 +48,7 @@
 					<div> <form action="./ArticleViewAdmin.php" method="get"> <input  type="submit" name="id" value="Lire l'article !" > <input  type="hidden" name="NumArt" value="<?php echo $Article['NumArt']; ?>"></form> </div>
 
 					<!-- Bouton Modifier -->
-					<div> <form action="./FormUpdate.php" method="post"> <input  type="submit" name="id" value="Modifier" > <input  type="hidden" name="NumArt" value="<?php echo $Article['NumArt']; ?>"></form> </div>
+					<div> <form action="./FormUpdate/GetInfo.php" method="post"> <input  type="submit" name="id" value="Modifier" > <input  type="hidden" name="NumArt" value="<?php echo $Article['NumArt']; ?>"></form> </div>
 
 					<!-- Bouton Supprimer -->
 					<div> <form action="./Delete.php" method="post"> <input  type="submit" name="id" value="Supprimer" > <input  type="hidden" name="NumArt" value="<?php echo $Article['NumArt']; ?>"></form> </div>

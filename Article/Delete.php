@@ -31,7 +31,8 @@
 
 		$CheckPhoto = $DB->query('SELECT * FROM ARTICLE WHERE  NumArt = "'.$_POST["NumArt"].'"');
 		while ($Photo = $CheckPhoto->fetch()) {
-			unlink($Photo['UrlPhotA']);
+			$UrlPhotA = substr($Photo['UrlPhotA'], 3);
+			unlink($UrlPhotA);
 		}
 
 
