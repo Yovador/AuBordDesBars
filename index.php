@@ -16,7 +16,14 @@
 </head>
 <body>
 
+
+
+
+<div class="header">	
+
+
 <!-- contour -->
+
 <div class="bordures">
 	<div class="vertical-line">
 		<div class="left-border"><span></span></div>
@@ -25,13 +32,8 @@
 		<div class="top-border"><hr></div>
 </div>
 
-
-<div class="header">	
-
-<!-- TOUT LES STYLES PRESENT SUR DU HTML SONT A ENLEVÉ -->
-
 	<!-- Bouton Home -->
-	
+	<div class="divflex">
 	<div id="titre" > 
 		<form action="./index.php" method="post"> 
 			<input id="boutonBars" type="submit" name="id" value="Au Bord Des Bars" > 
@@ -78,7 +80,8 @@
 		} 
 	?>
 
-		
+	
+	</div>
 </div>
 
 	<!--///////////////////////////// USER /////////////////////////////////// -->
@@ -95,7 +98,7 @@
 	
 <div class="dernierarticle">
 	<h2>Le Dernier Article</h2>
-		
+		<hr>
 			<div class="card" >
 				<div class="background">	
 				  <img src="..." class="card-img-top" alt="...">
