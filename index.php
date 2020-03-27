@@ -46,7 +46,7 @@
 		if (isset($_SESSION['IsConnect']) ){ 
 	?>
 			<!-- Bouton Deconnection -->
-			<div> 
+			<div class="deconnection"> 
 				Bonjour ! <?php echo $_SESSION['FirstName']; ?> <?php echo $_SESSION['LastName']; ?>
 				<form action="./Connection/Deconnect.php" method="post"> 
 					<input type="submit" name="id" value="Deconnexion" > 
@@ -59,7 +59,7 @@
 
 			<!-- Bouton Connection -->
 
-			<div> 
+			<div class="connection"> 
 				<form action="./Connection/Connect.php" method="post"> 
 					<input type="submit" name="id" value="Connexion" > 
 				</form> 
@@ -67,7 +67,7 @@
 
 			<!-- Bouton Inscription -->
 
-			<div> 
+			<div class="inscription"> 
 				<form action="./Connection/FormInscription.php" method="post"> 
 					<input type="submit" name="id" value="Inscription" > 
 				</form> 
