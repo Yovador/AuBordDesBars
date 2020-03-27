@@ -26,7 +26,7 @@
 <head>
 	<title> <?php echo $Article['LibTitrA'];?> - Au Bord des Bars </title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link  href="assets/css/lire.css" rel="stylesheet">
+	<link  href="../assets/css/lire.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
@@ -57,7 +57,7 @@
 	<div> <h3> <?php echo $Article['LibSsTitr1'];?> </h3> </div>
 
 	<!-- Paragraphe 2 -->
-	<div> <?php echo $Article['Parag2A'];?> </div>
+	<div class="paragraphe2"> <?php echo $Article['Parag2A'];?> </div>
 
 	<!-- Sous Titre 2 -->
 	<div> <h3> <?php echo $Article['LibSsTitr2'];?> </h3> </div>
