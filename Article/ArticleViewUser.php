@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php 
 	include "../General/connectionBD.php";
 	include "../General/GetOneEntry.php";
@@ -101,7 +102,9 @@
 
 <!-- Parties Likes -->
 
-
+	<?php if (isset($_SESSION['IsConnect'])){ ?>
+		
+	
 	<?php
 		$GetLikes = $DB->query('SELECT * FROM ARTICLE WHERE NumArt = "'.$NumArt.'" ');
 
@@ -129,10 +132,14 @@
 		}
 
 	 ?>
+<?php } 
+	else{ ?>
 
+	<div>Connectez vous pour likez cette article !</div>
+
+<?php } ?>
 <!-- Parties Comment -->
 
-	
 	
 	<?php include "CreateCom.php"; ?>
 
@@ -153,10 +160,19 @@
 
 	<?php 
 		}
+	?>
 
+	<?php if (isset($_SESSION['IsConnect'])){ ?>
+
+	<?php
 		include 'FormCreateCom.php';
 	?> 
 
+	<?php } else{ ?>
+
+		<div>Connectez vous pour commentez ! !</div>
+
+	<?php } ?>
 
 
 <!-- Code pour la parti "D'Autre Article" -->

@@ -1,10 +1,16 @@
 <?php 
 
 	if (!function_exists("GetList")) {
-		function GetList($table, $UpdateMode ,$Selected, $PrimKey, $key)
+		function GetList($table, $UpdateMode ,$Selected, $PrimKey, $key, $filterOn ,$discriminant, $equalto)
 		{
 			include "connectionBD.php";
-			$Get = $DB->query('SELECT * FROM '.$table.' ');
+			if ($filterOn) {
+				$Get = $DB->query('SELECT * FROM '.$table.' WHERE '.$discriminant.' = "'.$equalto.'"'  );
+			}
+			else {
+				$Get = $DB->query('SELECT * FROM '.$table.''  );
+			}
+			
 
 
 			while ($List = $Get->fetch()) {

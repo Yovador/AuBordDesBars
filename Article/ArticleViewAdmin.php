@@ -110,6 +110,10 @@
 
 	<h3> COMMENTAIRE </h3>
 
+	<?php if (isset($_GET['Destroy'])) {
+		include 'DeleteCom.php';
+	} ?>
+
 	<?php 
 		$GetComment = $DB->query('SELECT * FROM COMMENT WHERE NumArt ="'.$NumArt.'"  ');
 		while ($Comment = $GetComment->fetch()) {
@@ -120,6 +124,9 @@
 		<div> <?php echo $Comment['TitrCom']; ?> </div>
 
 		<div> <?php echo $Comment['LibCom']; ?> </div>
+
+		<div> <form action="./ArticleViewAdmin.php" method="GET"> <input type="submit" name="Destroy" value="Supprimer"> <input type="hidden" name="Target" value="<?php echo $Comment['NumCom']; ?>"><input type="hidden" name="NumArt" value="<?php echo $NumArt ?>"> </form> </div>
+
 
 
 	<?php 

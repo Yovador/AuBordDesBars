@@ -15,64 +15,11 @@
 
 </head>
 <body>
-<!-- contour -->
 
 
 
-<div class="header">	
 
-<!-- TOUT LES STYLES PRESENT SUR DU HTML SONT A ENLEVÉ -->
-
-	<!-- Bouton Home -->
-	
-	<div id="titre" > 
-		<form action="./index.php" method="post"> 
-			<input id="boutonBars" type="submit" name="id" value="Au Bord Des Bars" > 
-			<span>
-			<input type="hidden" name="isAdmin" value="<?php echo $isAdmin; ?>">
-		</form> 
-	</div>
-
-	<!-- /bouton home -->
-
-	<?php 
-		if (isset($_SESSION['IsConnect']) ){ 
-	?>
-			<!-- Bouton Deconnection -->
-			<div> 
-				Bonjour ! <?php echo $_SESSION['FirstName']; ?> <?php echo $_SESSION['LastName']; ?>
-				<form action="./Connection/Deconnect.php" method="post"> 
-					<input type="submit" name="id" value="Deconnexion" > 
-				</form> 
-			</div>
-	<?php 
-		}
-	 	else{ 
-	 ?>
-
-			<!-- Bouton Connection -->
-
-			<div> 
-				<form action="./Connection/Connect.php" method="post"> 
-					<input type="submit" name="id" value="Connexion" > 
-				</form> 
-			</div>
-
-			<!-- Bouton Inscription -->
-
-			<div> 
-				<form action="./Connection/FormInscription.php" method="post"> 
-					<input type="submit" name="id" value="Inscription" > 
-				</form> 
-			</div>
-
-
-	<?php 
-		} 
-	?>
-
-		
-</div>
+<?php include "header.php" ?>
 
 	<!--///////////////////////////// USER /////////////////////////////////// -->
 
@@ -88,7 +35,7 @@
 	
 <div class="dernierarticle">
 	<h2>Le Dernier Article</h2>
-		
+		<hr>
 			<div class="card" >
 				<div class="background">	
 				  <img src="..." class="card-img-top" alt="...">
@@ -166,7 +113,7 @@
 
 	<div style="margin: 1rem; ">
 		Écrire un article ou voir la liste complète pour les modifier
-		<form action="./Article/FormCreate.php" method="post"> <input  type="submit" name="id" value="Écrire un article" ></form>
+		<form action="./Article/Create.php" method="post"> <input  type="submit" name="id" value="Écrire un article" ></form>
 		<form action="./Article/AllArticle.php" method="post"> <input  type="submit" name="id" value="Voir La listes des Articles" ></form>
 
 	</div>

@@ -19,7 +19,7 @@
 	<h2>Les Articles</h2>
 
 	<form action="./AllArticle.php" method="post"> <input  type="submit" name="id" value="Voir La listes des Articles" ></form>
-	<form action="./FormCreate.php" method="post"> <input  type="submit" name="id" value="Écrire un article" ></form>
+	<form action="./Create.php" method="post"> <input  type="submit" name="id" value="Écrire un article" ></form>
 
 
 	<?php

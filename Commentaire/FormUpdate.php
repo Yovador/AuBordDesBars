@@ -44,7 +44,7 @@ $primKey = "NumCom";?>
 					Article:
 					<select type="text" name="LibTitrA"> 
 						<option value=""> Choississez un article </option>
-						<?php GetList("ARTICLE", true , $Info['NumArt'], "NumArt", "LibTitrA")?>
+						<?php GetList("ARTICLE", true , $Info['NumArt'], "NumArt", "LibTitrA", false, "", "")?>
 					</select>
 				</div>
 

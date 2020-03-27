@@ -38,7 +38,7 @@
 			Article:
 			<select type="text" name="LibTitrA"> 
 				<option value=""> Choississez un article </option>
-				<?php GetList("ARTICLE", false ,"", "", "LibTitrA")?>
+				<?php GetList("ARTICLE", false ,"", "", "LibTitrA", false, "", "")?>
 			</select>
 		</div>
 

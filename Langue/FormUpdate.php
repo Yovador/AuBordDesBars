@@ -32,10 +32,10 @@ $primKey = "NumLang";?>
 				</div>
 
 				<div> 
-		 			Pays : <?php echo $Info['NumPays']; ?>
+					Pays : 
 		 			<select type="text" name="frPays"> 
 		 				<option value=""> Choississez un pays </option>
-		 				<?php GetList("PAYS", true ,$Info['NumPays'], "numPays", "frPays")?>
+		 				<?php GetList("PAYS", true ,$Info['NumPays'], "numPays", "frPays", false, "", "")?>
 		 			</select>
 		 		</div>
 

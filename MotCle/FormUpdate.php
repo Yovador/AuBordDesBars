@@ -33,7 +33,7 @@ $primKey = "NumMoCle";?>
 		 			Langue :
 		 			<select type="text" name="NomLang"> 
 		 				<option value=""> Choississez un pays </option>
-		 				<?php GetList("LANGUE", true ,$Info['NumLang'], "NumLang", "Lib1Lang")?>
+		 				<?php GetList("LANGUE", true ,$Info['NumLang'], "NumLang", "Lib1Lang", false, "", "")?>
 		 			</select>
 		 		</div>
 
