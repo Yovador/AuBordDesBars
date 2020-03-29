@@ -17,13 +17,12 @@
 		$path_filename_ext = $targetDir.$filename.".jpg";
 
 		if (file_exists($path_filename_ext)) {
+			move_uploaded_file($temp_name,$path_filename_ext);
 			$UrlPhotA = $path_filename_ext;
-			echo "Sorry, file already exists.";
 		}
 		else{
 			move_uploaded_file($temp_name,$path_filename_ext);
 			$UrlPhotA = $path_filename_ext;
-			echo "Congratulations! File Uploaded Successfully.";
 		}
 		}
 		

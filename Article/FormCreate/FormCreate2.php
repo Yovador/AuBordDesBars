@@ -12,17 +12,17 @@
 		$targetDir = "../../assets/image/";
 		$imageArt = $_FILES['File']['name'];
 		$path = pathinfo($imageArt);
-		$filename = str_replace(" ", "", substr($_POST["LibTitrA"], 0, 10));
+		$filename = str_replace(" ", "", substr(htmlspecialchars($_POST["LibTitrA"]), 0, 10));
 		$temp_name = $_FILES['File']['tmp_name'];
 		$path_filename_ext = $targetDir.$filename.".jpg";
 
 		if (file_exists($path_filename_ext)) {
-			echo "Sorry, file already exists.";
+			move_uploaded_file($temp_name,$path_filename_ext);
+			$UrlPhotA = $path_filename_ext;
 		}
 		else{
 			move_uploaded_file($temp_name,$path_filename_ext);
 			$UrlPhotA = $path_filename_ext;
-			echo "Congratulations! File Uploaded Successfully.";
 		}
 		}
 		
