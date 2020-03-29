@@ -57,7 +57,7 @@
 	<div> <h3> <?php echo $Article['LibSsTitr1'];?> </h3> </div>
 
 	<!-- Paragraphe 2 -->
-	<div> <?php echo $Article['Parag2A'];?> </div>
+	<div class="paragraphe2"> <?php echo $Article['Parag2A'];?> </div>
 
 	<!-- Sous Titre 2 -->
 	<div> <h3> <?php echo $Article['LibSsTitr2'];?> </h3> </div>

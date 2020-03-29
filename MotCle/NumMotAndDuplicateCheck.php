@@ -1,8 +1,3 @@
-<?php include "../General/isAdmin.php" //$IsAdmin == true si Admin ?>
-
-<?php if ($isAdmin) { ?>
-
-
 <?php 
 
 	
@@ -68,13 +63,8 @@
 
 
 	}
+
+	if(!isset($CanSend)){
+		$CanSend = true;
+	}
  ?>
-
-<?php 
-}
-else{
-	header('Location: ../index.php');
-	exit();
-	} 
-
-?>
