@@ -10,9 +10,9 @@
 </div>
 	<div class="menudroite">
 		<ul>
-			<li><a href="">Mentions légales</a></li> 
-			<li><a href="">Protection des données</a></li>
-			<li><a href="">CGU</a></li>
+			<li><a href="mentions\index.html">Mentions légales</a></li> 
+			<li><a href="mentions\index.html">Protection des données</a></li>
+			<li><a href="mentions\index.html">CGU</a></li>
 		</ul>
 	</div>
 </div>
