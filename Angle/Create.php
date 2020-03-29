@@ -51,8 +51,8 @@
 			}
 		}
 	}
-	//header('Location: AllAngle.php');
-	//exit();
+	header('Location: AllAngle.php');
+	exit();
 
 ?>
 
