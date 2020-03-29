@@ -7,6 +7,7 @@ Pour le front:
 -dernier article fonctionnel
 -tous les article fonctionnel
 -hearder / Footer fonctionnel
+-pour le côté Admins, les formulaire n'ont pas de CSS
 
 Pour la Back:
 -create  fonctionel
