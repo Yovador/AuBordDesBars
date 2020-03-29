@@ -1,3 +1,7 @@
+<?php include "../General/isAdmin.php" //$IsAdmin == true si Admin ?>
+
+<?php if ($isAdmin) { ?>
+
 <?php 
 
 	include "../General/GetOneEntry.php";
@@ -47,7 +51,16 @@
 			}
 		}
 	}
-	header('Location: AllAngle.php');
+	//header('Location: AllAngle.php');
+	//exit();
+
+?>
+
+<?php 
+}
+else{
+	header('Location: ../index.php');
 	exit();
+	} 
 
 ?>
