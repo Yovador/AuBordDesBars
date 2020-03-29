@@ -11,11 +11,11 @@
 			while($max = $getmax->fetch()){
 
 				if ($CountNum['COUNT(*)'] < 9) {
-					$NumAngl = substr($max['NumAngl'], 0, 5)."0".((int)substr($max['NumAngl'],5, 7)+1);
+					$NumAngl = substr($max['NumAngl'], 0, 4)."0".((int)substr($max['NumAngl'],5, 7)+1);
 				}
 
 				else{
-					$NumAngl = substr($max['NumAngl'], 0, 5).((int)substr($max['NumAngl'],5, 7)+1);
+					$NumAngl = substr($max['NumAngl'], 0, 4).((int)substr($max['NumAngl'],5, 7)+1);
 				}
 
 			}

@@ -6,7 +6,7 @@
 
 <h2>Les Angles</h2>
 
-<form action="./FormCreate.php" method="post"> <input  type="submit" name="id" value="Créer une langue" ></form>
+<form action="./FormCreate.php" method="post"> <input  type="submit" name="id" value="Créer un Angle" ></form>
 
 	<?php
 			include "../General/GetOneEntry.php"; 
