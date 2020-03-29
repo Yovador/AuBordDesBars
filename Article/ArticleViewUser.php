@@ -26,7 +26,7 @@
 <head>
 	<title> <?php echo $Article['LibTitrA'];?> - Au Bord des Bars </title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link  href="assets/css/lire.css" rel="stylesheet">
+	<link  href="./assets/css/lire.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
@@ -36,7 +36,7 @@
 	<div> <form action="../index.php" method="post"> <input  type="submit" name="id" value="HOME" > <input  type="hidden" name="isAdmin" value="<?php echo "false"; ?>"></form> </div>
 
 	<!-- Titre -->
-	<div class="title"> <h2> <?php echo $Article['LibTitrA'];?> </h2> </div> 
+	<div> <h2 class="title"> <?php echo $Article['LibTitrA'];?> </h2> </div> 
 
 	<!-- Angle | Theme | Langue -->
 	<div> <?php echo $LibAngl; ?> | <?php echo $LibThem; ?> | <?php echo $Lib1Lang; ?> </div> 
