@@ -19,4 +19,8 @@
 			$CanSend = true;
 		}
 	}
+
+	if(!isset($CanSend)){
+		$CanSend = true;
+	}
  ?>

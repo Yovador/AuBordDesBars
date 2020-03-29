@@ -63,4 +63,9 @@
 
 
 	}
+
+
+	if(!isset($CanSend)){
+		$CanSend = true;
+	}
  ?>
